@@ -1,99 +1,153 @@
-# My ARCH-Hyprland Config
+# kbyte75's Arch-Hyprland Dotfiles
 
-1. Download or clone this repository.
-2. Copy all files to `~/.config`, except `nanorc`, `sddm-login-theme` & `previews`.
-3. Copy `nanorc` in `/etc/`.
-4. Copy `sddm-login-theme` in `/usr/share/sddm/themes`.
-5. Setup Cursor, Icon Theme, Fonts with nwg-look
+![Hyprland](https://img.shields.io/badge/Hyprland-2025-blue?style=flat&logo=hyprland&logoColor=white)
+![Arch Linux](https://img.shields.io/badge/Arch_Linux-1793D1?logo=archlinux&logoColor=white)
 
-## Required Dependencies
+## Preview
 
-```bash
- sudo pacman -S waybar swww rofi hyprlock hypridle hyprshot matugen fish fastfetch sddm kitty make cmake base-devel git nano python-pyquery nwg-look nautilus font-manager blueman nm-connection-editor --needed
-```
+_(Add screenshots here later)_
 
-## Create Folder
+## Features
 
-```bash
-  mkdir -p ~/Pictures
-  mkdir -p ~/Pictures/Screenshots
-  mkdir -p ~/Pictures/Wallpapers
-```
+- Hyprland with Waybar, rofi, swww, matugen
+- Fish shell + oh-my-posh prompt
+- SDDM with custom theme
+- Pre-configured Kitty, Nautilus, nwg-look ready
+- Hypremoji, hyprshot, hyprlock, hypridle
+- Fastfetch system info
 
-## Install Yay
+## What the script does
 
-```bash
- git clone https://aur.archlinux.org/yay. git
- cd yay
- makepkg -si
-```
+- Installs all required packages (pacman + AUR via yay)
+- Clones and copies dotfiles to `~/.config`
+- Installs custom SDDM theme and `/etc/nanorc`
+- Switches default shell to Fish
+- Creates necessary folders (`~/Pictures/Screenshots`, `~/Pictures/Wallpapers`)
 
-## Install oh-my-posh
+## Requirements
 
-```bash
- yay -S oh-my-posh hypremoji --noconfirm
-```
+- Fresh Arch Linux installation (with internet)
+- Root privileges (sudo)
 
-## Change Default Shell to Fish
+## One-Command Installation (recommended)
 
 ```bash
- chsh -s /usr/local/bin/fish
+curl -fsSL https://raw.githubusercontent.com/kbyte75/Arch-Hyprland-Config/main/install.sh | bash
 ```
 
-## Download Fonts, Themes, Cursor, Icon
-
-- **Bibata Modern Ice Cursor**: [Click](https://www.gnome-look.org/p/1197198)
-- **MacTahoe Icon Theme**: [Click](https://www.gnome-look.org/p/2299216)
-
-- **Rubik**: [Link](https://fonts.google.com/selection?query=rubik)
-- **Poppins**: [Link](https://fonts.google.com/selection?query=poppins)
-- **A Black Lives**: [Link](https://www.dafont.com/a-black-lives.font)
-- **Voice In My Head**: [Link](https://www.dafont.com/voice-in-my-head.font)
-- **FiraCode Nerd Font**: [Link](https://github.com/ryanoasis/nerd-fonts/releases/download/v3.4.0/FiraCode.zip)
-
-## Set permissions
+## Manual Installation
 
 ```bash
- sudo chmod +x ~/.config/hypr/scripts/*.sh
- sudo chmod +x ~/.config/waybar/scripts/*.sh
- sudo chmod +x ~/.config/rofi/scripts/*.sh
- sudo chmod +x ~/.config/waybar/scripts/weather.py
+git clone https://github.com/kbyte75/my-arch-config.git && cd my-arch-config && bash install.sh
 ```
 
-### - WAYBAR
+## Post-Installation Steps (Required)
 
-![Alt text](https://github.com/kbyte75/my-arch-config/blob/main/previews/waybar.png?raw=true)
+After reboot and logging in via SDDM:
 
-### - FASTFETCH
+### 1. Download Fonts, Themes, Cursor, Icon:
 
-![Alt text](https://github.com/kbyte75/my-arch-config/blob/main/previews/fish_&_fastfetch.png?raw=true)
+- [Bibata Modern Ice Cursor](https://www.gnome-look.org/p/1197198)
+- [MacTahoe Icon Theme](https://www.gnome-look.org/p/2299216)
+- [Rubik](https://fonts.google.com/selection?query=rubik)
+- [Poppins](https://fonts.google.com/selection?query=poppins)
+- [A Black Lives](https://www.dafont.com/a-black-lives.font)
+- [Voice In My Head](https://www.dafont.com/voice-in-my-head.font)
+- [FiraCode Nerd Font](https://github.com/ryanoasis/nerd-fonts/releases/download/v3.4.0/FiraCode.zip)
+
+### 2. Open `nwg-look` → Set:
+
+- Cursor: Bibata-Modern-Ice
+- Icons: MacTahoe
+- Fonts: Rubik / Poppins / etc.
 
 ### - KEYBINDINGS
 
-<table width="100%">
+<table width="100%" style="border-collapse:collapse;font-family:sans-serif;">
   <tbody>
-    <tr><td>SUPER + RETURN</td><td>OPEN TERMINAL</td></tr>
-    <tr><td>SUPER + D</td><td>CLOSE ACTIVE WINDOW</td></tr>
-    <tr><td>SUPER + F</td><td>OPEN FILE MANAGER</td></tr>
-    <tr><td>SUPER + R</td><td>LAUNCH ROFI</td></tr>
-    <tr><td>SUPER + B</td><td>OPEN FIREFOX</td></tr>
-    <tr><td>SUPER + C</td><td>OPEN VSCODIUM</td></tr>
-    <tr><td>SUPER + M</td><td>OPEN MOTRIX</td></tr>
-    <tr><td>SUPER + W</td><td>OPEN WAYDROID</td></tr>
-    <tr><td>SUPER + .</td><td>OPEN EMOJI PICKER</td></tr>
-    <tr><td>SUPER + SHIFT + F</td><td>TOGGLE FULLSCREEN</td></tr>
-    <tr><td>SUPER + SPACE</td><td>TOGGLE FLOATING</td></tr>
-    <tr><td>SUPER + P</td><td>SELECT AREA SCREENSHOT</td></tr>
-    <tr><td>PRINT</td><td>FULL SCREENSHOT</td></tr>
-    <tr><td>SUPER + T</td><td>SWITCH WALLPAPER</td></tr>
-    <tr><td>SUPER + J</td><td>TOGGLE WAYBAR</td></tr>
-    <tr><td>ALT + SPACE</td><td>RELOAD WAYBAR</td></tr>
-    <tr><td>SUPER + MOUSE UP</td><td>PREVIOUS WORKSPACE</td></tr>
-    <tr><td>SUPER + MOUSE DOWN</td><td>NEXT WORKSPACE</td></tr>
-    <tr><td>ALT + MOUSE UP</td><td>MOVE WINDOW TO PREVIOUS WORKSPACE</td></tr>
-    <tr><td>ALT + MOUSE DOWN</td><td>MOVE WINDOW TO NEXT WORKSPACE</td></tr>
-    <tr><td>SUPER + 1–9</td><td>SWITCH TO WORKSPACE 1–9</td></tr>
-    <tr><td>SUPER + LMB DRAG</td><td>MOVE WINDOW</td></tr>
-    <tr><td>SUPER + RMB DRAG</td><td>RESIZE WINDOW</td></tr>
+    <tr>
+      <td style="padding:8px;border:1px solid rgba(255,255,255,.1);width:25%;"><strong>SUPER + RETURN</strong></td>
+      <td style="padding:8px;border:1px solid rgba(255,255,255,.1);width:25%;">OPEN TERMINAL</td>
+      <td style="padding:8px;border:1px solid rgba(255,255,255,.1);width:25%;"><strong>SUPER + SHIFT + F</strong></td>
+      <td style="padding:8px;border:1px solid rgba(255,255,255,.1);width:25%;">TOGGLE FULLSCREEN</td>
+    </tr>
+    <tr>
+      <td style="padding:8px;border:1px solid rgba(255,255,255,.1);"><strong>SUPER + D</strong></td>
+      <td style="padding:8px;border:1px solid rgba(255,255,255,.1);">CLOSE ACTIVE WINDOW</td>
+      <td style="padding:8px;border:1px solid rgba(255,255,255,.1);"><strong>SUPER + SPACE</strong></td>
+      <td style="padding:8px;border:1px solid rgba(255,255,255,.1);">TOGGLE FLOATING</td>
+    </tr>
+    <tr>
+      <td style="padding:8px;border:1px solid rgba(255,255,255,.1);"><strong>SUPER + F</strong></td>
+      <td style="padding:8px;border:1px solid rgba(255,255,255,.1);">OPEN FILE MANAGER</td>
+      <td style="padding:8px;border:1px solid rgba(255,255,255,.1);"><strong>SUPER + P</strong></td>
+      <td style="padding:8px;border:1px solid rgba(255,255,255,.1);">SELECT AREA SCREENSHOT</td>
+    </tr>
+    <tr>
+      <td style="padding:8px;border:1px solid rgba(255,255,255,.1);"><strong>SUPER + R</strong></td>
+      <td style="padding:8px;border:1px solid rgba(255,255,255,.1);">LAUNCH ROFI</td>
+      <td style="padding:8px;border:1px solid rgba(255,255,255,.1);"><strong>PRINT</strong></td>
+      <td style="padding:8px;border:1px solid rgba(255,255,255,.1);">FULL SCREENSHOT</td>
+    </tr>
+    <tr>
+      <td style="padding:8px;border:1px solid rgba(255,255,255,.1);"><strong>SUPER + B</strong></td>
+      <td style="padding:8px;border:1px solid rgba(255,255,255,.1);">OPEN FIREFOX</td>
+      <td style="padding:8px;border:1px solid rgba(255,255,255,.1);"><strong>SUPER + T</strong></td>
+      <td style="padding:8px;border:1px solid rgba(255,255,255,.1);">SWITCH WALLPAPER</td>
+    </tr>
+    <tr>
+      <td style="padding:8px;border:1px solid rgba(255,255,255,.1);"><strong>SUPER + C</strong></td>
+      <td style="padding:8px;border:1px solid rgba(255,255,255,.1);">OPEN VSCODIUM</td>
+      <td style="padding:8px;border:1px solid rgba(255,255,255,.1);"><strong>SUPER + J</strong></td>
+      <td style="padding:8px;border:1px solid rgba(255,255,255,.1);">TOGGLE WAYBAR</td>
+    </tr>
+    <tr>
+      <td style="padding:8px;border:1px solid rgba(255,255,255,.1);"><strong>SUPER + M</strong></td>
+      <td style="padding:8px;border:1px solid rgba(255,255,255,.1);">OPEN MOTRIX</td>
+      <td style="padding:8px;border:1px solid rgba(255,255,255,.1);"><strong>ALT + SPACE</strong></td>
+      <td style="padding:8px;border:1px solid rgba(255,255,255,.1);">RELOAD WAYBAR</td>
+    </tr>
+    <tr>
+      <td style="padding:8px;border:1px solid rgba(255,255,255,.1);"><strong>SUPER + W</strong></td>
+      <td style="padding:8px;border:1px solid rgba(255,255,255,.1);">OPEN WAYDROID</td>
+      <td style="padding:8px;border:1px solid rgba(255,255,255,.1);"><strong>SUPER + 1–9</strong></td>
+      <td style="padding:8px;border:1px solid rgba(255,255,255,.1);">SWITCH TO WORKSPACE 1–9</td>
+    </tr>
+    <tr>
+      <td style="padding:8px;border:1px solid rgba(255,255,255,.1);"><strong>SUPER + .</strong></td>
+      <td style="padding:8px;border:1px solid rgba(255,255,255,.1);">OPEN EMOJI PICKER</td>
+      <td style="padding:8px;border:1px solid rgba(255,255,255,.1);"><strong>SUPER + LMB DRAG</strong></td>
+      <td style="padding:8px;border:1px solid rgba(255,255,255,.1);">MOVE WINDOW</td>
+    </tr>
+    <tr>
+      <td style="padding:8px;border:1px solid rgba(255,255,255,.1);"><strong>SUPER + MOUSE UP</strong></td>
+      <td style="padding:8px;border:1px solid rgba(255,255,255,.1);">PREVIOUS WORKSPACE</td>
+      <td style="padding:8px;border:1px solid rgba(255,255,255,.1);"><strong>SUPER + RMB DRAG</strong></td>
+      <td style="padding:8px;border:1px solid rgba(255,255,255,.1);">RESIZE WINDOW</td>
+    </tr>
+    <tr>
+      <td style="padding:8px;border:1px solid rgba(255,255,255,.1);"><strong>SUPER + MOUSE DOWN</strong></td>
+      <td style="padding:8px;border:1px solid rgba(255,255,255,.1);">NEXT WORKSPACE</td>
+      <td style="padding:8px;border:1px solid rgba(255,255,255,.1);"><strong>ALT + MOUSE UP</strong></td>
+      <td style="padding:8px;border:1px solid rgba(255,255,255,.1);">MOVE WINDOW TO PREVIOUS WORKSPACE</td>
+    </tr>
+    <tr>
+      <td style="padding:8px;border:1px solid rgba(255,255,255,.1);"></td>
+      <td style="padding:8px;border:1px solid rgba(255,255,255,.1);"><strong>ALT + MOUSE DOWN</strong></td>
+      <td style="padding:8px;border:1px solid rgba(255,255,255,.1);">MOVE WINDOW TO NEXT WORKSPACE</td>
+      <td style="padding:8px;border:1px solid rgba(255,255,255,.1);"></td>
+    </tr>
   </tbody>
 </table>
+
+## Troubleshooting
+
+- Script only works on Arch Linux
+- Run with stable internet connection
+- Reboot required after install
+
+## Enjoy!
+
+Your new Hyprland setup is ready. Welcome to the rice side.
+
+Made with ❤️ by **KBYTE75**

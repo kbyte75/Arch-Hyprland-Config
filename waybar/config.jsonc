@@ -108,7 +108,7 @@
       "format": "{icon}",
       "icon-theme": "MacTahoe",
       "update-active-window": false,
-      "ignore-list": ["kitty"]
+      "ignore-list": ["kitty", "dev.musagy.hypremoji"]
     },
     "sort-by": "number",
     "persistent-workspaces": { "*": 5 },
