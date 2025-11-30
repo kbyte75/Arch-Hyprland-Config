@@ -1,0 +1,177 @@
+@import "colors.css";
+
+@define-color light_bg rgba(255, 255, 255, 0.12);
+/* @define-color border_color rgba(255, 255, 255, 0.3); */
+
+* {
+  margin: 0;
+  font-family: "Poppins", "JetBrainsMono NFP";
+  font-size: 14px;
+  font-weight: 600;
+  border: none;
+  color: #f2efdf;
+}
+
+window#waybar {
+  border-radius: 8px;
+  background-color: @surface-variant;
+  border: 1px solid @outline;
+}
+
+window#waybar.hidden {
+  opacity: 0.5;
+}
+
+window#waybar.empty,
+window#waybar.empty #window {
+  padding: 0px;
+  border: 0px;
+  background-color: transparent;
+}
+
+#custom-space {
+  min-width: 60px;
+  padding: 10px 0;
+  background-color: transparent;
+}
+
+#custom-separator {
+  min-width: 22px;
+  font-size: 10px;
+  margin: 5px 0;
+  font-weight: 800;
+  color: #f2efdf;
+  background-color: @light_bg;
+}
+
+tooltip {
+  border-radius: 6px;
+  background-color: @secondary;
+  border: 1px solid @primary;
+}
+
+tooltip label {
+  font-size: 13px;
+  font-weight: 400;
+  color: @background;
+}
+/* =============================== LEFT SECTION =============================== */
+
+#custom-logo,
+#custom-title {
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  border-radius: 0px;
+  background-color: @light_bg;
+}
+
+#custom-logo {
+  font-size: 20px;
+  margin: 5px 0 5px 5px;
+  border-top-left-radius: 6px;
+  border-bottom-left-radius: 6px;
+  color: @primary;
+}
+
+#custom-title {
+  font-family: "Raleway";
+  font-weight: 600;
+  font-size: 14px;
+  margin: 5px 0 5px 0;
+  padding-right: 8px;
+  border-top-right-radius: 6px;
+  border-bottom-right-radius: 6px;
+}
+
+#memory {
+  margin: 0 12px;
+}
+
+#temperature.critical,
+#memory.critical,
+#cpu.critical {
+  color: #c40404;
+}
+
+#temperature.warning,
+#memory.warning,
+#cpu.warning {
+  color: #cad806;
+}
+/* =============================== MIDDLE SECTION =============================== */
+
+/* FOR APP ICONS */
+/* #workspaces button {
+  border-radius: 100%;
+  margin: 4px 0;
+  border: none;
+} */
+/* cubic-bezier(0.55, -0.68, 0.48, 1.682) */
+#workspaces button {
+  margin: 8px 2px;
+  padding: 0 4px;
+  border-radius: 6px;
+  transition: all 0.3s cubic-bezier(0.55, -0.68, 0.48, 1);
+  background-color: @outline;
+}
+#workspaces button.active {
+  padding: 0 14px;
+  background-color: @primary;
+}
+/* =============================== RIGHT SECTION =============================== */
+#tray {
+  margin-right: 12px;
+}
+
+#custom-weather {
+  margin-left: 12px;
+}
+
+#custom-screenshot {
+  font-size: 18px;
+  margin: 5px 0 5px 8px;
+  padding: 0 8px;
+  border-radius: 5px;
+}
+
+#custom-screenshot:hover {
+  transition: all 0.3s ease-in-out;
+  background-color: @light_bg;
+}
+
+#bluetooth {
+  font-size: 16px;
+}
+
+#bluetooth,
+#network,
+#custom-power {
+  margin: 5px 0;
+  min-width: 16px;
+  padding: 0 4px;
+  border-radius: 0px;
+  background-color: @light_bg;
+}
+
+#network.module.speed {
+  background-color: transparent;
+}
+
+#bluetooth,
+#custom-logo {
+  padding: 0 6px;
+  border-top-left-radius: 6px;
+  border-bottom-left-radius: 6px;
+}
+#custom-power {
+  color: @primary;
+  margin-right: 5px;
+  padding: 0 6px;
+  border-top-right-radius: 6px;
+  border-bottom-right-radius: 6px;
+}
+
+#menu {
+  margin-top: 65px;
+  margin-right: 0;
+}
