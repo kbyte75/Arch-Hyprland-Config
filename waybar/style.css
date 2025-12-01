@@ -39,8 +39,6 @@ window#waybar.empty #window {
   min-width: 22px;
   font-size: 10px;
   margin: 5px 0;
-  font-weight: 800;
-  color: #f2efdf;
   background-color: @light_bg;
 }
 
@@ -59,7 +57,7 @@ tooltip label {
 
 #custom-logo,
 #custom-title {
-  font-weight: 500;
+  font-weight: 600;
   letter-spacing: 0.5px;
   border-radius: 0px;
   background-color: @light_bg;
