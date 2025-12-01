@@ -1,0 +1,56 @@
+{
+  "custom/logo": {
+    "format": "",
+    "tooltip": false,
+    "on-click": "~/.config/rofi/scripts/launcher.sh",
+    "on-scroll-up": "~/.config/waybar/scripts/brightness.sh up",
+    "on-scroll-down": "~/.config/waybar/scripts/brightness.sh down"
+  },
+
+  // SHOWS THE APP TITLE IN UPPERCASE
+  "custom/title": {
+    "interval": 1,
+    "format": "{text}",
+    "tooltip": false,
+    "return-type": "text",
+    "exec": "~/.config/waybar/scripts/window.sh",
+    "on-scroll-up": "~/.config/waybar/scripts/brightness.sh up",
+    "on-scroll-down": "~/.config/waybar/scripts/brightness.sh down"
+  },
+
+  "cpu": {
+    "interval": 1,
+    "tooltip": false,
+    "format": "\uf4bc {usage}%",
+    "states": {
+      "warning": 60,
+      "critical": 80
+    }
+  },
+
+  "memory": {
+    "interval": 1,
+    "format": "\uefc5 {percentage}%",
+    "tooltip-format": "{used:0.1f}GB / {total}GB",
+    "states": {
+      "warning": 60,
+      "critical": 80
+    }
+  },
+
+  "disk": {
+    "interval": 30,
+    "format": "\uf07c {specific_free:0.0f}GB",
+    "path": "/",
+    "unit": "GB"
+  },
+
+  "temperature": {
+    "interval": 1,
+    "tooltip": false,
+    "thermal-zone": 2,
+    "critical-threshold": 70,
+    "format": "\uf2c9 {temperatureC}°C",
+    "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input"
+  }
+}

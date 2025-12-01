@@ -11,7 +11,6 @@ _(Add screenshots here later)_
 
 - Hyprland with Waybar, rofi, swww, matugen
 - Fish shell + oh-my-posh prompt
-- SDDM with custom theme
 - Pre-configured Kitty, Nautilus, nwg-look ready
 - Hypremoji, hyprshot, hyprlock, hypridle
 - Fastfetch system info
@@ -20,7 +19,6 @@ _(Add screenshots here later)_
 
 - Installs all required packages (pacman + AUR via yay)
 - Clones and copies dotfiles to `~/.config`
-- Installs custom SDDM theme and `/etc/nanorc`
 - Switches default shell to Fish
 - Creates necessary folders (`~/Pictures/Screenshots`, `~/Pictures/Wallpapers`)
 
@@ -61,79 +59,79 @@ After reboot and logging in via SDDM:
 - Icons: MacTahoe
 - Fonts: Rubik / Poppins / etc.
 
-### - KEYBINDINGS
+## KEYBINDINGS
 
 <table width="100%" style="border-collapse:collapse;font-family:sans-serif;">
   <tbody>
     <tr>
-      <td style="padding:8px;border:1px solid rgba(255,255,255,.1);width:25%;"><strong>SUPER + RETURN</strong></td>
-      <td style="padding:8px;border:1px solid rgba(255,255,255,.1);width:25%;">OPEN TERMINAL</td>
-      <td style="padding:8px;border:1px solid rgba(255,255,255,.1);width:25%;"><strong>SUPER + SHIFT + F</strong></td>
+      <td style="padding:8px;border:1px solid rgba(255,255,255,.1);width:25%;">SUPER + RETURN</td>
+      <td style="padding:8px;border:1px solid rgba(255,255,255,.1);width:25%;">OPEN TERMINAL (KITTY)</td>
+      <td style="padding:8px;border:1px solid rgba(255,255,255,.1);width:25%;">SUPER + SHIFT + F</td>
       <td style="padding:8px;border:1px solid rgba(255,255,255,.1);width:25%;">TOGGLE FULLSCREEN</td>
     </tr>
     <tr>
-      <td style="padding:8px;border:1px solid rgba(255,255,255,.1);"><strong>SUPER + D</strong></td>
+      <td style="padding:8px;border:1px solid rgba(255,255,255,.1);">SUPER + D</td>
       <td style="padding:8px;border:1px solid rgba(255,255,255,.1);">CLOSE ACTIVE WINDOW</td>
-      <td style="padding:8px;border:1px solid rgba(255,255,255,.1);"><strong>SUPER + SPACE</strong></td>
+      <td style="padding:8px;border:1px solid rgba(255,255,255,.1);">SUPER + SPACE</td>
       <td style="padding:8px;border:1px solid rgba(255,255,255,.1);">TOGGLE FLOATING</td>
     </tr>
     <tr>
-      <td style="padding:8px;border:1px solid rgba(255,255,255,.1);"><strong>SUPER + F</strong></td>
+      <td style="padding:8px;border:1px solid rgba(255,255,255,.1);">SUPER + F</td>
       <td style="padding:8px;border:1px solid rgba(255,255,255,.1);">OPEN FILE MANAGER</td>
-      <td style="padding:8px;border:1px solid rgba(255,255,255,.1);"><strong>SUPER + P</strong></td>
+      <td style="padding:8px;border:1px solid rgba(255,255,255,.1);">SUPER + P</td>
       <td style="padding:8px;border:1px solid rgba(255,255,255,.1);">SELECT AREA SCREENSHOT</td>
     </tr>
     <tr>
-      <td style="padding:8px;border:1px solid rgba(255,255,255,.1);"><strong>SUPER + R</strong></td>
-      <td style="padding:8px;border:1px solid rgba(255,255,255,.1);">LAUNCH ROFI</td>
-      <td style="padding:8px;border:1px solid rgba(255,255,255,.1);"><strong>PRINT</strong></td>
+      <td style="padding:8px;border:1px solid rgba(255,255,255,.1);">SUPER + R</td>
+      <td style="padding:8px;border:1px solid rgba(255,255,255,.1);">LAUNCH ROFI LAUNCHER</td>
+      <td style="padding:8px;border:1px solid rgba(255,255,255,.1);">PRINT</td>
       <td style="padding:8px;border:1px solid rgba(255,255,255,.1);">FULL SCREENSHOT</td>
     </tr>
     <tr>
-      <td style="padding:8px;border:1px solid rgba(255,255,255,.1);"><strong>SUPER + B</strong></td>
+      <td style="padding:8px;border:1px solid rgba(255,255,255,.1);">SUPER + B</td>
       <td style="padding:8px;border:1px solid rgba(255,255,255,.1);">OPEN FIREFOX</td>
-      <td style="padding:8px;border:1px solid rgba(255,255,255,.1);"><strong>SUPER + T</strong></td>
+      <td style="padding:8px;border:1px solid rgba(255,255,255,.1);">SUPER + T</td>
       <td style="padding:8px;border:1px solid rgba(255,255,255,.1);">SWITCH WALLPAPER</td>
     </tr>
     <tr>
-      <td style="padding:8px;border:1px solid rgba(255,255,255,.1);"><strong>SUPER + C</strong></td>
+      <td style="padding:8px;border:1px solid rgba(255,255,255,.1);">SUPER + C</td>
       <td style="padding:8px;border:1px solid rgba(255,255,255,.1);">OPEN VSCODIUM</td>
-      <td style="padding:8px;border:1px solid rgba(255,255,255,.1);"><strong>SUPER + J</strong></td>
+      <td style="padding:8px;border:1px solid rgba(255,255,255,.1);">SUPER + J</td>
       <td style="padding:8px;border:1px solid rgba(255,255,255,.1);">TOGGLE WAYBAR</td>
     </tr>
     <tr>
-      <td style="padding:8px;border:1px solid rgba(255,255,255,.1);"><strong>SUPER + M</strong></td>
+      <td style="padding:8px;border:1px solid rgba(255,255,255,.1);">SUPER + M</td>
       <td style="padding:8px;border:1px solid rgba(255,255,255,.1);">OPEN MOTRIX</td>
-      <td style="padding:8px;border:1px solid rgba(255,255,255,.1);"><strong>ALT + SPACE</strong></td>
+      <td style="padding:8px;border:1px solid rgba(255,255,255,.1);">ALT + SPACE</td>
       <td style="padding:8px;border:1px solid rgba(255,255,255,.1);">RELOAD WAYBAR</td>
     </tr>
     <tr>
-      <td style="padding:8px;border:1px solid rgba(255,255,255,.1);"><strong>SUPER + W</strong></td>
+      <td style="padding:8px;border:1px solid rgba(255,255,255,.1);">SUPER + W</td>
       <td style="padding:8px;border:1px solid rgba(255,255,255,.1);">OPEN WAYDROID</td>
-      <td style="padding:8px;border:1px solid rgba(255,255,255,.1);"><strong>SUPER + 1–9</strong></td>
+      <td style="padding:8px;border:1px solid rgba(255,255,255,.1);">SUPER + 1–9</td>
       <td style="padding:8px;border:1px solid rgba(255,255,255,.1);">SWITCH TO WORKSPACE 1–9</td>
     </tr>
     <tr>
-      <td style="padding:8px;border:1px solid rgba(255,255,255,.1);"><strong>SUPER + .</strong></td>
+      <td style="padding:8px;border:1px solid rgba(255,255,255,.1);">SUPER + .</td>
       <td style="padding:8px;border:1px solid rgba(255,255,255,.1);">OPEN EMOJI PICKER</td>
-      <td style="padding:8px;border:1px solid rgba(255,255,255,.1);"><strong>SUPER + LMB DRAG</strong></td>
+      <td style="padding:8px;border:1px solid rgba(255,255,255,.1);">SUPER + LMB DRAG</td>
       <td style="padding:8px;border:1px solid rgba(255,255,255,.1);">MOVE WINDOW</td>
     </tr>
     <tr>
-      <td style="padding:8px;border:1px solid rgba(255,255,255,.1);"><strong>SUPER + MOUSE UP</strong></td>
+      <td style="padding:8px;border:1px solid rgba(255,255,255,.1);">SUPER + MOUSE UP</td>
       <td style="padding:8px;border:1px solid rgba(255,255,255,.1);">PREVIOUS WORKSPACE</td>
-      <td style="padding:8px;border:1px solid rgba(255,255,255,.1);"><strong>SUPER + RMB DRAG</strong></td>
+      <td style="padding:8px;border:1px solid rgba(255,255,255,.1);">SUPER + RMB DRAG</td>
       <td style="padding:8px;border:1px solid rgba(255,255,255,.1);">RESIZE WINDOW</td>
     </tr>
     <tr>
-      <td style="padding:8px;border:1px solid rgba(255,255,255,.1);"><strong>SUPER + MOUSE DOWN</strong></td>
+      <td style="padding:8px;border:1px solid rgba(255,255,255,.1);">SUPER + MOUSE DOWN</td>
       <td style="padding:8px;border:1px solid rgba(255,255,255,.1);">NEXT WORKSPACE</td>
-      <td style="padding:8px;border:1px solid rgba(255,255,255,.1);"><strong>ALT + MOUSE UP</strong></td>
+      <td style="padding:8px;border:1px solid rgba(255,255,255,.1);">ALT + MOUSE UP</td>
       <td style="padding:8px;border:1px solid rgba(255,255,255,.1);">MOVE WINDOW TO PREVIOUS WORKSPACE</td>
     </tr>
     <tr>
       <td style="padding:8px;border:1px solid rgba(255,255,255,.1);"></td>
-      <td style="padding:8px;border:1px solid rgba(255,255,255,.1);"><strong>ALT + MOUSE DOWN</strong></td>
+      <td style="padding:8px;border:1px solid rgba(255,255,255,.1);">ALT + MOUSE DOWN</td>
       <td style="padding:8px;border:1px solid rgba(255,255,255,.1);">MOVE WINDOW TO NEXT WORKSPACE</td>
       <td style="padding:8px;border:1px solid rgba(255,255,255,.1);"></td>
     </tr>

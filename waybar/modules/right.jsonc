@@ -1,0 +1,52 @@
+{
+  "tray": {
+    "spacing": 10,
+    "show-passive-items": true
+  },
+
+  "clock": {
+    "tooltip": true,
+    "format": "{:%I:%M %p}",
+    "tooltip-format": "{:%A, %B %d, %Y}"
+  },
+
+  "bluetooth": {
+    "format": "󰂯",
+    "format-disabled": "󰂲",
+    "format-connected": "󰂱",
+    // "format-connected-battery": "󰂱 {device_battery_percentage}%",
+    "tooltip-format": "󰂯 {controller_alias}",
+    "tooltip-format-connected": "Connected \n {device_enumerate}   󰂎 {device_battery_percentage}%",
+    "tooltip-format-enumerate-connected": "{device_alias}",
+    "on-click": "~/.config/waybar/scripts/connection.sh bluetooth",
+    "on-scroll-up": "~/.config/waybar/scripts/volume.sh up",
+    "on-scroll-down": "~/.config/waybar/scripts/volume.sh down"
+  },
+
+  "network#speed": {
+    "interval": 1,
+    "interface": "wlan0",
+    "format": " {bandwidthTotalBytes}"
+  },
+
+  "network": {
+    "interface": "wlan0",
+    "format": "󰤩",
+    "format-wifi": "",
+    "format-icons": {
+      "low": "",
+      "high": ""
+    },
+    "format-disconnected": "󰤭", //An empty format will hide the module.
+    "format-ethernet": "{ipaddr}/{cidr} 󰊗",
+    "tooltip-format": "{ifname} via {gwaddr} 󰊗",
+    "tooltip-format-wifi": "  {essid}  ({signalStrength}%)",
+    "tooltip-format-ethernet": "{ifname} ",
+    "tooltip-format-disconnected": "Disconnected",
+    "max-length": 60,
+    "tooltip": true,
+    "on-click": "~/.config/waybar/scripts/connection.sh wifi",
+    "on-scroll-up": "~/.config/waybar/scripts/volume.sh up",
+    "on-scroll-down": "~/.config/waybar/scripts/volume.sh down"
+  }
+}
