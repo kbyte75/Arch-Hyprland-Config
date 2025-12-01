@@ -1,23 +1,4 @@
 {
-  "custom/logo": {
-    "format": "",
-    "tooltip": false,
-    "on-click": "~/.config/rofi/scripts/launcher.sh",
-    "on-scroll-up": "~/.config/waybar/scripts/brightness.sh up",
-    "on-scroll-down": "~/.config/waybar/scripts/brightness.sh down"
-  },
-
-  // SHOWS THE APP TITLE IN UPPERCASE
-  "custom/title": {
-    "interval": 1,
-    "format": "{text}",
-    "tooltip": false,
-    "return-type": "text",
-    "exec": "~/.config/waybar/scripts/window.sh",
-    "on-scroll-up": "~/.config/waybar/scripts/brightness.sh up",
-    "on-scroll-down": "~/.config/waybar/scripts/brightness.sh down"
-  },
-
   "cpu": {
     "interval": 1,
     "tooltip": false,

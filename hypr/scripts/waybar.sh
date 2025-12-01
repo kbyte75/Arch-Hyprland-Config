@@ -2,6 +2,7 @@
 if [ "$1" = "reload" ]; then
   killall waybar
   waybar &
+  # waybar -c ~/.config/waybar/vertical/config.jsonc -s ~/.config/waybar/vertical/style.css
   notify-send "Waybar Reloaded" -i $HOME/.config/hypr/icons/check.png -r 9996 
   exit 0
 fi

@@ -1,5 +1,5 @@
 {
-  "name": "top_bar",
+  "id": "top_bar",
   "include": [
     "$HOME/.config/waybar/modules/left.jsonc",
     "$HOME/.config/waybar/modules/middle.jsonc",
@@ -39,7 +39,24 @@
   ],
 
   // ========================================  CUSTOM MODULES ========================================
+  "custom/logo": {
+    "format": "",
+    "tooltip": false,
+    "on-click": "~/.config/rofi/scripts/launcher.sh",
+    "on-scroll-up": "~/.config/waybar/scripts/brightness.sh up",
+    "on-scroll-down": "~/.config/waybar/scripts/brightness.sh down"
+  },
 
+  // SHOWS THE APP TITLE IN UPPERCASE
+  "custom/title": {
+    "interval": 1,
+    "format": "{text}",
+    "tooltip": false,
+    "return-type": "text",
+    "exec": "~/.config/waybar/scripts/window.sh",
+    "on-scroll-up": "~/.config/waybar/scripts/brightness.sh up",
+    "on-scroll-down": "~/.config/waybar/scripts/brightness.sh down"
+  },
   "custom/space": {
     "format": " ",
     "tooltip": false,
@@ -58,7 +75,7 @@
     "escape": true,
     "interval": 300,
     "tooltip": true,
-    "format": "{text}",
+    "format": "{text}C",
     "return-type": "json",
     "tooltip-format": "Weather",
     "exec": "python3 ~/.config/waybar/scripts/weather.py"
