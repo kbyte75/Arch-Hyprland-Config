@@ -141,8 +141,8 @@ tooltip label {
   font-size: 16px;
 }
 
-#bluetooth,
-#network,
+/* #network.wifi, */
+#network.module,
 #custom-power {
   margin: 5px 0;
   min-width: 16px;
@@ -151,16 +151,27 @@ tooltip label {
   background-color: @light_bg;
 }
 
-#network.module.speed {
-  background-color: transparent;
-}
-
 #bluetooth,
 #custom-logo {
   padding: 0 6px;
   border-top-left-radius: 6px;
   border-bottom-left-radius: 6px;
 }
+
+#bluetooth {
+  margin: 5px 0;
+  padding: 0 4px;
+  background-color: @light_bg;
+}
+#bluetooth.module,
+#bluetooth.device {
+  background-color: transparent;
+}
+
+#network.disconnected {
+  background-color: @light_bg;
+}
+
 #custom-power {
   color: @primary;
   margin-right: 5px;

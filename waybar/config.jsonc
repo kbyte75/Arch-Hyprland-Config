@@ -3,7 +3,8 @@
   "include": [
     "$HOME/.config/waybar/modules/left.jsonc",
     "$HOME/.config/waybar/modules/middle.jsonc",
-    "$HOME/.config/waybar/modules/right.jsonc"
+    "$HOME/.config/waybar/modules/right.jsonc",
+    "$HOME/.config/waybar/modules/group.jsonc"
   ],
   "layer": "top",
   "reload_style_on_change": true,
@@ -34,8 +35,9 @@
     "custom/weather",
     "custom/screenshot",
     "custom/space",
-    "bluetooth",
-    "network",
+    "group/bluetooth",
+    // "network",
+    "group/network",
     "custom/power"
   ],
 

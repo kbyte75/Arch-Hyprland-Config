@@ -41,7 +41,7 @@ git clone https://github.com/kbyte75/my-arch-config.git && cd my-arch-config && 
 
 ## Post-Installation Steps (Required)
 
-After reboot and logging in via SDDM:
+After reboot:
 
 ### 1. Download Fonts, Themes, Cursor, Icon:
 

@@ -38,7 +38,7 @@ main() {
 
   # Install dependencies
   log "Installing required dependecies..."
-  sudo pacman -S --noconfirm --needed make cmake rsync base-devel git nano vim python-pyquery nwg-look font-manager blueman nm-connection-editor || error "Failed to install dependencies. Please try install them manually or contact the developer."
+  sudo pacman -S --noconfirm --needed make cmake rsync base-devel git nano vim python-pyquery nwg-look font-manager blueman nm-connection-editor adw-gtk-theme || error "Failed to install dependencies. Please try install them manually or contact the developer."
   
   # Clone repo
   log "Cloning repository..."
@@ -66,6 +66,7 @@ main() {
 
   # Create folders
   log "Creating required folders..."
+  mkdir -p ~/Pictures
   mkdir -p ~/Pictures/{Screenshots,Wallpapers}
 
   # Copy config files
