@@ -6,7 +6,7 @@
 * {
   margin: 0;
   font-family: "Poppins", "JetBrainsMono NFP";
-  font-size: 14px;
+  /* font-size: 14px; */
   font-weight: 600;
   border: none;
   color: #f2efdf;
@@ -49,7 +49,7 @@ tooltip {
 }
 
 tooltip label {
-  font-size: 13px;
+  font-size: 14px;
   font-weight: 400;
   color: @background;
 }
@@ -73,7 +73,7 @@ tooltip label {
 
 #custom-title {
   font-family: "Raleway";
-  font-weight: 600;
+  font-weight: 700;
   font-size: 14px;
   margin: 5px 0 5px 0;
   padding-right: 8px;
@@ -104,6 +104,9 @@ tooltip label {
   margin: 4px 0;
   border: none;
 } */
+#workspaces {
+  padding: 0 40px;
+}
 /* cubic-bezier(0.55, -0.68, 0.48, 1.682) */
 #workspaces button {
   margin: 8px 2px;
@@ -116,6 +119,7 @@ tooltip label {
   padding: 0 14px;
   background-color: @primary;
 }
+
 /* =============================== RIGHT SECTION =============================== */
 #tray {
   margin-right: 12px;

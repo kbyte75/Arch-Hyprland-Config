@@ -18,10 +18,12 @@
   "passthrough": false,
   "fixed-center": true,
   "modules-left": [
+    "custom/logo",
     "clock",
-    // "custom/logo",
     // "custom/separator",
-    "custom/space"
+    "custom/space",
+    "custom/cpu-icon",
+    "cpu"
 
     // "memory",
     // "temperature"
@@ -40,6 +42,26 @@
     "network",
     "custom/power"
   ],
+  "group/cpu": {
+    "orientation": "inherit",
+    "drawer": {
+      "transition-duration": 500,
+      "transition-left-to-right": true
+    },
+    "modules": ["custom/cpu-icon", "cpu"]
+  },
+  "cpu": {
+    "interval": 1,
+    "tooltip": false,
+    "format": "{usage}%",
+    "states": {
+      "warning": 60,
+      "critical": 80
+    }
+  },
+  "custom/cpu-icon": {
+    "format": "\uf4bc"
+  },
 
   "clock": {
     "tooltip": true,

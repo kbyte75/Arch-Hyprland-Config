@@ -50,7 +50,8 @@ window#waybar.empty #window {
 #clock {
   font-size: 14px;
   margin-top: 8px;
-  font-family: "a Absolute Empire";
+  font-weight: 800;
+  /* font-family: "Montserrat"; */
 }
 #workspaces button {
   margin: 2px 5px;

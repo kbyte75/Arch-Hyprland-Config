@@ -3,8 +3,7 @@
   "include": [
     "$HOME/.config/waybar/modules/left.jsonc",
     "$HOME/.config/waybar/modules/middle.jsonc",
-    "$HOME/.config/waybar/modules/right.jsonc",
-    "$HOME/.config/waybar/modules/group.jsonc"
+    "$HOME/.config/waybar/modules/right.jsonc"
   ],
   "layer": "top",
   "reload_style_on_change": true,
@@ -66,7 +65,6 @@
     "on-scroll-up": "~/.config/waybar/scripts/volume.sh up",
     "on-scroll-down": "~/.config/waybar/scripts/volume.sh down"
   },
-
   "custom/separator": {
     "format": "|",
     "tooltip": false,
@@ -90,7 +88,6 @@
     "tooltip-format": "Screenshot",
     "on-click": "hyprshot -m region -f Pictures/Screenshots/$(date +'%Y-%m-%d_%H-%M-%S').png"
   },
-
   "custom/power": {
     "format": "",
     "tooltip": true,
