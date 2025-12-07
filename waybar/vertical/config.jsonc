@@ -1,0 +1,185 @@
+{
+  "id": 2,
+  // "include": [
+  //   "$HOME/.config/waybar/modules/left.jsonc",
+  //   "$HOME/.config/waybar/modules/middle.jsonc",
+  //   "$HOME/.config/waybar/modules/right.jsonc"
+  // ],
+  "layer": "top",
+  "position": "right",
+  // "width": 35,
+  "margin-top": 4,
+  "margin-right": 4,
+  "margin-left": 4,
+  "margin-bottom": 4,
+  "exclusive": true,
+  "reload_style_on_change": true,
+  "gtk-layer-shell": true,
+  "passthrough": false,
+  "fixed-center": true,
+  "modules-left": [
+    "custom/logo",
+    "clock",
+    // "custom/separator",
+    "custom/space",
+    "custom/cpu-icon",
+    "cpu"
+
+    // "memory",
+    // "temperature"
+    // // "disk"
+  ],
+  "modules-center": ["hyprland/workspaces"],
+  "modules-right": [
+    //   "tray",
+    //   // "network#speed",
+    //   "clock",
+    // "custom/weather",
+    "custom/screenshot",
+
+    "custom/space",
+    "bluetooth",
+    "network",
+    "custom/power"
+  ],
+  "group/cpu": {
+    "orientation": "inherit",
+    "drawer": {
+      "transition-duration": 500,
+      "transition-left-to-right": true
+    },
+    "modules": ["custom/cpu-icon", "cpu"]
+  },
+  "cpu": {
+    "interval": 1,
+    "tooltip": false,
+    "format": "{usage}%",
+    "states": {
+      "warning": 60,
+      "critical": 80
+    }
+  },
+  "custom/cpu-icon": {
+    "format": "\uf4bc"
+  },
+
+  "clock": {
+    "tooltip": true,
+    "format": "{:%I\n%M}",
+    "tooltip-format": "    {:%A\n%B %d}"
+  },
+  "custom/logo": {
+    "format": "",
+    "tooltip": false,
+    "on-click": "~/.config/rofi/scripts/launcher.sh",
+    "on-scroll-up": "~/.config/waybar/scripts/brightness.sh up",
+    "on-scroll-down": "~/.config/waybar/scripts/brightness.sh down"
+  },
+
+  "hyprland/workspaces": {
+    "format": "{windows}",
+    "format-window-separator": "",
+    "workspace-taskbar": {
+      "enable": true,
+      "icon-size": 20,
+      "format": "{icon}",
+      "icon-theme": "MacTahoe",
+      "update-active-window": false,
+      // "orientation": "vertical",
+      "ignore-list": ["kitty", "dev.musagy.hypremoji"]
+    },
+    "persistent-workspaces": { "*": 5 },
+    "on-scroll-up": "hyprctl dispatch workspace -1",
+    "on-scroll-down": "hyprctl dispatch workspace +1"
+  },
+
+  "custom/weather": {
+    "escape": true,
+    "interval": 300,
+    "tooltip": true,
+    "format": "{text}",
+    "return-type": "json",
+    "tooltip-format": "Weather",
+    "exec": "python3 ~/.config/waybar/vertical/scripts/weather.py"
+  },
+
+  "custom/screenshot": {
+    "tooltip": true,
+    "format": "\udb86\udcf5",
+    "tooltip-format": "Screenshot",
+    "on-click": "hyprshot -m region -f Pictures/Screenshots/$(date +'%Y-%m-%d_%H-%M-%S').png"
+  },
+  "bluetooth": {
+    "format": "󰂯",
+    "format-disabled": "󰂲",
+    "format-connected": "󰂱",
+    // "format-connected-battery": "󰂱 {device_battery_percentage}%",
+    "tooltip-format": "󰂯 {controller_alias}",
+    "tooltip-format-connected": "Connected \n {device_enumerate}   󰂎 {device_battery_percentage}%",
+    "tooltip-format-enumerate-connected": "{device_alias}",
+    "on-click": "~/.config/waybar/scripts/connection.sh bluetooth",
+    "on-scroll-up": "~/.config/waybar/scripts/volume.sh up",
+    "on-scroll-down": "~/.config/waybar/scripts/volume.sh down"
+  },
+
+  "network#speed": {
+    "interval": 1,
+    "interface": "wlan0",
+    "format": " {bandwidthTotalBytes}"
+  },
+
+  "network": {
+    "interface": "wlan0",
+    "format": "󰤩",
+    "format-wifi": "",
+    "format-icons": {
+      "low": "",
+      "high": ""
+    },
+    "format-disconnected": "󰤭", //An empty format will hide the module.
+    "format-ethernet": "{ipaddr}/{cidr} 󰊗",
+    "tooltip-format": "{ifname} via {gwaddr} 󰊗",
+    "tooltip-format-wifi": "  {essid}  ({signalStrength}%)",
+    "tooltip-format-ethernet": "{ifname} ",
+    "tooltip-format-disconnected": "Disconnected",
+    "max-length": 60,
+    "tooltip": true,
+    "on-click": "~/.config/waybar/scripts/connection.sh wifi",
+    "on-scroll-up": "~/.config/waybar/scripts/volume.sh up",
+    "on-scroll-down": "~/.config/waybar/scripts/volume.sh down"
+  },
+
+  "custom/power": {
+    "format": "",
+    "tooltip": true,
+    "tooltip-format": "Power Menu",
+    "on-scroll-up": "~/.config/waybar/scripts/volume.sh up",
+    "on-scroll-down": "~/.config/waybar/scripts/volume.sh down",
+
+    "menu": "on-click",
+    "menu-file": "~/.config/waybar/scripts/powerMenu.xml",
+    "menu-actions": {
+      "shutdown": "shutdown now",
+      "lock": "hyprlock",
+      "logout": "hyprctl dispatch exit",
+      "reboot": "reboot",
+      "suspend": "systemctl suspend",
+      "hibernate": "systemctl hibernate"
+    }
+  },
+  // ========================================  CUSTOM MODULES ========================================
+
+  "custom/space": {
+    "format": " ",
+    "tooltip": false,
+    "on-scroll-up": "~/.config/waybar/scripts/volume.sh up",
+    "on-scroll-down": "~/.config/waybar/scripts/volume.sh down"
+  },
+
+  "custom/separator": {
+    "format": "|",
+    "tooltip": false,
+    "on-scroll-up": "~/.config/waybar/scripts/brightness.sh up",
+    "on-scroll-down": "~/.config/waybar/scripts/brightness.sh down"
+  }
+}

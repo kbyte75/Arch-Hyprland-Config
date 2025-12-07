@@ -1,0 +1,7 @@
+* {
+    primary: {{colors.primary.default.hex}};
+    secondary: {{colors.secondary_fixed.default.hex}};
+    surface: {{colors.surface.default.hex}};    
+    outline: {{colors.outline.default.hex}};    
+    background: {{colors.background.default.hex}};    
+}

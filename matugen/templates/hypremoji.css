@@ -1,0 +1,71 @@
+@define-color primary_color {{colors.primary_fixed_dim.default.hex}};
+@define-color bg_color {{colors.on_primary_fixed.default.hex}};
+
+* {
+  outline: none;
+}
+
+window {
+  border-radius: 10px;
+  padding: 12px 0px 0px 0px;
+  background-color: rgba(60, 60, 60, 0.8);
+  border: 1px solid @primary_color;
+}
+
+entry {
+  font-family: "Rubik";
+  color: white;
+  border-radius: 10px;
+  padding: 0 15px;
+  border: 1px solid transparent;
+  transition: border 0.2s ease-in;
+  background-color: @bg_color;
+}
+
+entry:hover {
+  border-color: @primary_color;
+}
+
+entry.active {
+  border-color: @primary_color;
+}
+
+.generic-btn {
+  padding: 0 5px;
+  border-radius: 10px;
+  transition: background 0.2s ease-in;
+  border: 1px solid @bg_color;
+  background: @bg_color;
+}
+
+.generic-btn:hover {
+  transition: color 2s ease-in-out;
+  background: @primary_color;
+}
+
+.category_nav button {
+  border: none;
+  padding: 1px 5px;
+  border-radius: 5px;
+  font-size: 16px;
+  transition: background 0.2s ease-in;
+  background: @bg_color;
+}
+.category_nav button:hover,
+.category_nav button:focus {
+  background: @primary_color;
+}
+.nav_enabled button.active,
+.nav_enabled button.active:focus {
+  background: @primary_color;
+}
+.emoji-item {
+  font-family: "Noto Color Emoji";
+  font-size: 1.6rem;
+  border-radius: 6px;
+  transition: background 0.3s ease-in;
+  /* border: 1px solid @primary_color; */
+}
+.emoji-item:hover {
+  background-color: @bg_color;
+}

@@ -1,0 +1,170 @@
+{
+  // BACKGROUND APPS (TRAY)
+  "group/tray": {
+    "orientation": "horizontal",
+    "drawer": {
+      "transition-duration": 500,
+      "transition-left-to-right": true
+    },
+    "modules": ["custom/space", "tray"]
+  },
+  "custom/space": {
+    "format": " ",
+    "tooltip": false,
+    "on-scroll-up": "~/.config/waybar/scripts/volume.sh up",
+    "on-scroll-down": "~/.config/waybar/scripts/volume.sh down"
+  },
+  "tray": {
+    "spacing": 10,
+    "show-passive-items": true,
+    "on-scroll-up": "",
+    "on-scroll-down": ""
+  },
+
+  // DAY & TIME
+  "group/clock": {
+    "orientation": "inherit",
+    "drawer": {
+      "transition-duration": 500,
+      "transition-left-to-right": false
+    },
+    "modules": ["clock", "clock#day"]
+  },
+
+  "clock": {
+    "tooltip": false,
+    "format": "{:%I:%M}"
+  },
+
+  "clock#day": {
+    "tooltip": false,
+    "format": "{:%A}"
+  },
+
+  // WIFI ICON & SPEED
+  "group/network-modules": {
+    "orientation": "inherit",
+    "drawer": {
+      "transition-duration": 500,
+      "transition-left-to-right": true
+    },
+    "modules": ["network", "network#speed"]
+  },
+
+  "network#speed": {
+    "interval": 1,
+    "interface": "wlan0",
+    "format": " {bandwidthTotalBytes} ",
+    "format-disconnected": "",
+    "tooltip-format-disconnected": "",
+    "tooltip-format-wifi": "  {essid}  ({signalStrength}%)",
+    "on-scroll-up": "~/.config/waybar/scripts/volume.sh up",
+    "on-scroll-down": "~/.config/waybar/scripts/volume.sh down"
+  },
+
+  "network": {
+    "interface": "wlan0",
+    "format": "󰤩 ",
+    "format-wifi": " ",
+    "format-icons": {
+      "low": "",
+      "high": ""
+    },
+    "format-disconnected": "󰤭 ", //An empty format will hide the module.
+    "format-ethernet": "{ipaddr}/{cidr} 󰊗",
+    "tooltip-format": "{ifname} via {gwaddr} 󰊗",
+    "tooltip-format-wifi": "  {essid}  ({signalStrength}%)",
+    "tooltip-format-ethernet": "",
+    "tooltip-format-disconnected": "Disconnected",
+    "max-length": 60,
+    "tooltip": true,
+    "on-click": "~/.config/waybar/scripts/connection.sh wifi",
+    "on-scroll-up": "~/.config/waybar/scripts/volume.sh up",
+    "on-scroll-down": "~/.config/waybar/scripts/volume.sh down"
+  },
+
+  // BLUETOOTH ICON AND CONNECTED DEVICE
+  "group/bluetooth-modules": {
+    "orientation": "inherit",
+    "drawer": {
+      "transition-duration": 500,
+      "transition-left-to-right": true
+    },
+    "modules": ["bluetooth", "bluetooth#device"]
+  },
+
+  "bluetooth": {
+    "format": "󰂯 ",
+    "format-disabled": "󰂲 ",
+    "format-connected": "󰂱 ",
+    // "format-connected-battery": "󰂱 {device_battery_percentage}%",
+    "tooltip-format": "󰂯 {controller_alias}",
+    "tooltip-format-connected": "Connected \n {device_enumerate}   󰂎 {device_battery_percentage}%",
+    "tooltip-format-enumerate-connected": "{device_alias}",
+    "on-click": "~/.config/waybar/scripts/connection.sh bluetooth",
+    "on-scroll-up": "~/.config/waybar/scripts/volume.sh up",
+    "on-scroll-down": "~/.config/waybar/scripts/volume.sh down"
+  },
+
+  "bluetooth#device": {
+    "format": "",
+    "tooltip": false,
+    "format-disabled": "",
+    "format-connected": "{device_alias} {device_battery_percentage}%   ",
+    "on-click": "~/.config/waybar/scripts/connection.sh bluetooth",
+    "on-scroll-up": "~/.config/waybar/scripts/volume.sh up",
+    "on-scroll-down": "~/.config/waybar/scripts/volume.sh down"
+  },
+
+  // POWER MENU
+  "group/power-menu": {
+    "orientation": "horizontal",
+    "drawer": {
+      "transition-duration": 500,
+      "transition-left-to-right": false
+    },
+    "modules": ["custom/power", "custom/logout", "custom/reboot"]
+  },
+  "custom/power": {
+    "format": "",
+    "tooltip": true,
+    "on-click": "shutdown now",
+    "tooltip-format": "Shutdown",
+    "on-scroll-up": "~/.config/waybar/scripts/volume.sh up",
+    "on-scroll-down": "~/.config/waybar/scripts/volume.sh down"
+  },
+  "custom/logout": {
+    "format": "󰿅",
+    "tooltip": true,
+    "on-click": "hyprctl dispatch exit",
+    "tooltip-format": "Logout",
+    "on-scroll-up": "~/.config/waybar/scripts/volume.sh up",
+    "on-scroll-down": "~/.config/waybar/scripts/volume.sh down"
+  },
+  "custom/reboot": {
+    "format": "󰑓",
+    "tooltip": true,
+    "on-click": "reboot",
+    "tooltip-format": "Reboot",
+    "on-scroll-up": "~/.config/waybar/scripts/volume.sh up",
+    "on-scroll-down": "~/.config/waybar/scripts/volume.sh down"
+  }
+  // "custom/power": {
+  //   "format": "",
+  //   "tooltip": true,
+  //   "tooltip-format": "Power Menu",
+  //   "on-scroll-up": "~/.config/waybar/scripts/volume.sh up",
+  //   "on-scroll-down": "~/.config/waybar/scripts/volume.sh down",
+
+  //   "menu": "on-click",
+  //   "menu-file": "~/.config/waybar/scripts/powerMenu.xml",
+  //   "menu-actions": {
+  //     "shutdown": "shutdown now",
+  //     "lock": "hyprlock",
+  //     "logout": "hyprctl dispatch exit",
+  //     "reboot": "reboot",
+  //     "suspend": "systemctl suspend",
+  //     "hibernate": "systemctl hibernate"
+  //   }
+  // }
+}
