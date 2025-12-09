@@ -69,8 +69,9 @@ foreground = "{{colors.on_surface.default.hex}}"
 highlight = "{{colors.secondary.default.hex}}"
 [urgency_critical]
 timeout = 0
-background = "{{colors.surface.default.hex}}"
+background = "#a51414ff"
 foreground = "{{colors.on_surface.default.hex}}"
 highlight = "{{colors.error.default.hex}}"
+frame_color = "{{colors.surface.default.hex}}"
 
 

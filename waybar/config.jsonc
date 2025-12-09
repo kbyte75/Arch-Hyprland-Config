@@ -18,12 +18,11 @@
   "fixed-center": true,
   "modules-left": [
     "custom/logo",
-    "custom/title", // "window",
+    "custom/title",
     "group/stats",
     "cpu",
     "memory",
     "temperature"
-    // "disk"
   ],
   "modules-center": ["hyprland/workspaces"],
   "modules-right": [

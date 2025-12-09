@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+
 # =============================================================================
 # Description: Full automated installer for kbyte75's ARCH-Hyprland-Config
 # Repo: https://github.com/kbyte75/Arch-Hyprland-Config
@@ -12,7 +13,7 @@ IFS=$'\n\t'
 
 readonly REPO="https://github.com/kbyte75/Arch-Hyprland-Config.git"
 readonly REPO_DIR="$HOME/Arch-Hyprland-Config"
-readonly CONFIG_HOME="${HOME}/.config"
+readonly CONFIG_DIR="${HOME}/.config"
 readonly GREEN='\033[0;32m' YELLOW='\033[1;33m' RED='\033[0;31m' NC='\033[0m'
 
 log()   { echo -e "${GREEN}[INFO]${NC} $*"; }
@@ -38,7 +39,7 @@ main() {
 
   # Install dependencies
   log "Installing required dependecies..."
-  sudo pacman -S --noconfirm --needed make cmake rsync base-devel git nano vim python-pyquery nwg-look font-manager blueman nm-connection-editor adw-gtk-theme || error "Failed to install dependencies. Please try install them manually or contact the developer."
+  sudo pacman -S --noconfirm --needed make cmake rsync base-devel git nano python-pyquery nwg-look font-manager blueman nm-connection-editor adw-gtk-theme || error "Failed to install dependencies. Please try install them manually or contact the developer."
   
   # Clone repo
   log "Cloning repository..."
@@ -47,11 +48,11 @@ main() {
 
   # Install Packages
   log "Installing main packages..."
-  sudo pacman -S --noconfirm --needed waybar swww rofi hyprlock hypridle hyprshot matugen fish fastfetch sddm kitty nautilus || error "Failed to install required packages.Please try install them manually or contact the developer."
+  sudo pacman -S --noconfirm --needed waybar swww rofi hyprlock hypridle hyprshot matugen fish fastfetch kitty nautilus || error "Failed to install required packages.Please try install them manually or contact the developer."
   
   # Change default shell to fish
   log "Changing default shell to fish..."
-  sudo chsh -s /usr/bin/fish "$USER"
+  sudo chsh -s /usr/bin/fish
 
   # Install yay (if not exist)
   if ! command -v yay >/dev/null; then
@@ -72,8 +73,8 @@ main() {
   # Copy config files
   log "Copying configs to ~/.config..."
   cd $REPO_DIR
-  rsync -a --exclude='previews' --exclude='.gitignore' --exclude='install.sh' * "$CONFIG_HOME"/
-  # rsync -a "$REPO_DIR"/config/* "$CONFIG_HOME"/
+  rsync -a --exclude='previews' --exclude='install.sh' * "$CONFIG_DIR"/
+  # rsync -a "$REPO_DIR"/config/* "$CONFIG_DIR"/
 
   # Copy nanorc & SDDM theme
   # log "Installing nanorc & SDDM theme..."
