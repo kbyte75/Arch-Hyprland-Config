@@ -1,5 +1,6 @@
 #!/bin/bash
 
+swww clear-cache
 # Directory for wallpapers
 WALLPAPER_DIR="$HOME/Pictures/Wallpapers"
 # Array of transition types
@@ -16,6 +17,8 @@ fi
 WALLPAPER=$(find "$WALLPAPER_DIR" -type f | shuf -n 1)
 if [[ -z "$WALLPAPER" ]]; then
   echo "Error: No files found in $WALLPAPER_DIR."
+  notify-send "No Image found in '~/Pictures/Wallpapers'" -i $HOME/.config/hypr/icons/close.png -r 9996 -u critical
+  
   exit 1
 fi
 

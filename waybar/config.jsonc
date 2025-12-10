@@ -75,12 +75,6 @@
     "tooltip": true,
     "format": "󱣴",
     "tooltip-format": "Screenshot",
-    "on-click": "hyprshot -m region -f Pictures/Screenshots/$(date +'%Y-%m-%d_%H-%M-%S').png"
+    "on-click": "hyprshot -m region -f /Screenshots/$(date +'%Y-%m-%d_%H-%M-%S').png"
   }
-  // "custom/separator": {
-  //   "format": "|",
-  //   "tooltip": false,
-  //   "on-scroll-up": "~/.config/waybar/scripts/brightness.sh up",
-  //   "on-scroll-down": "~/.config/waybar/scripts/brightness.sh down"
-  // },
 }

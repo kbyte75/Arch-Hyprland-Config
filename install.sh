@@ -63,7 +63,7 @@ main() {
 
   # Install AUR packages
   log "Installing oh-my-posh & hypremoji..."
-  yay -S --noconfirm oh-my-posh hypremoji
+  yay -S --noconfirm --needed oh-my-posh hypremoji ibus-m17n m17n-db
 
   # Create folders
   log "Creating required folders..."

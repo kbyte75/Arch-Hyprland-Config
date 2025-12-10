@@ -5,7 +5,10 @@ configuration {
     display-drun:               "APPS";
 	drun-display-format:        "{name}";
 	window-format:              "{w} · {c}";
-    click-to-exit: true;
+    kb-cancel: "Escape,Super+space";
+    me-select-entry: "";
+    me-accept-entry: "MousePrimary";
+    hover-select: true;
 }
 
 /*****----- Global Properties -----*****/

@@ -1,0 +1,47 @@
+configuration {
+    modi: "drun";
+    show-icons: false;
+    hover-select: true;
+    me-select-entry: "";
+    me-accept-entry: "MousePrimary";
+    font: "JetBrainsMono Nerd Font 12";
+    icon-theme: "Papirus";
+}
+@import                          "~/.config/rofi/colors.rasi"
+
+window {
+    width: 450px;
+    height: 500px;
+    border: 1px;
+    border-color: @primary;
+    border-radius: 12px;
+    padding: 10px;
+    background-color: @background;
+}
+
+listview {
+    lines: 12;
+    columns: 1;
+    fixed-height: true;
+    scrollbar: false;
+    background-color: transparent;
+}
+
+element {
+    padding: 10px 15px;
+    spacing: 15px;
+    text-color: #cdd6f4;
+    border-radius: 6px;
+    background-color: @secondary;
+}
+
+element selected {
+    background-color: @primary;
+}
+
+element-text {
+    color: #fff;
+    vertical-align: 0.5;
+    horizontal-align: 0;
+    background-color: transparent;
+}
