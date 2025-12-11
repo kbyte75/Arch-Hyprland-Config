@@ -75,6 +75,6 @@
     "tooltip": true,
     "format": "󱣴",
     "tooltip-format": "Screenshot",
-    "on-click": "hyprshot -m region -f /Screenshots/$(date +'%Y-%m-%d_%H-%M-%S').png"
+    "on-click": "~/.config/hypr/scripts/screenshot.sh region"
   }
 }

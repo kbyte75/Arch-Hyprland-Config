@@ -17,5 +17,5 @@ set -Ux MAKEFLAGS "-j4"
 #  ALIAS
 abbr -a ls eza --icons --group-directories-first
 alias motrix="~/Desktop/motrix/motrix"
-# alias wsstop="waydroid session stop"
 abbr -a wsstop waydroid session stop
+abbr -a ys yay -S --needed --noconfirm
