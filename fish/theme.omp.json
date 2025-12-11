@@ -13,7 +13,7 @@
 
         {
           "foreground": "#fb8500",
-          "properties": {
+          "options": {
             "folder_separator_icon": "/",
             "style": "full"
           },
@@ -31,7 +31,7 @@
         {
           "foreground": "#e4b302",
           "powerline_symbol": "\udb81\ude2c",
-          "properties": {
+          "options": {
             "fetch_upstream_icon": true
           },
           "style": "plain",

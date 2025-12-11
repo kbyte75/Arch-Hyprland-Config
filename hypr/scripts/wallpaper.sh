@@ -26,14 +26,18 @@ fi
 TRANSITION=${TRANSITIONS[$RANDOM % ${#TRANSITIONS[@]}]}
 
 # Apply wallpaper with swww
-if ! swww img "$WALLPAPER" --transition-type "$TRANSITION" --transition-fps 60 --transition-duration 2 --transition-bezier .42,0,.58,1; then
+if ! swww img "$WALLPAPER" --transition-type "$TRANSITION" --transition-fps 60 --transition-duration 2.2 --transition-bezier .42,0,.58,1; then
   echo "Error: Failed to apply wallpaper with swww."
+  notify-send "Failed to apply wallpaper with swww." -i $HOME/.config/hypr/icons/close.png -r 9996 -u critical
+  
   exit 1
 fi
 
 # Run matugen for color scheme
 if ! matugen image "$WALLPAPER"; then
   echo "Error: matugen failed to process $WALLPAPER."
+    notify-send "Matugen failed to process $WALLPAPER." -i $HOME/.config/hypr/icons/close.png -r 9996 -u critical
+  
   exit 1
 fi
 
