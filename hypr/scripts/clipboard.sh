@@ -5,7 +5,7 @@ CONTENT=$(wl-paste 2>/dev/null || echo "Clipboard is empty!")
 
 # Use rofi (if installed) for beautiful display
 if command -v rofi >/dev/null; then
-    cliphist list | rofi -dmenu -p "󰅍 " -theme clipboard.rasi | cliphist decode | wl-copy
+    cliphist list | rofi -dmenu -p "󰅍 " -display-columns 2 -theme clipboard.rasi | cliphist decode | wl-copy
 else
     # Fallback: notify-send (scrollable)
     notify-send "Clipboard" "$CONTENT" -t 8000

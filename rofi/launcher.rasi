@@ -22,13 +22,13 @@ window {
     border-color: @primary;
     border: 1px;
     border-radius:               16px;
-    background-color:            transparent;
+    background-color: @surface-variant;
 }
 
 
 mainbox {
     spacing:                     16px;
-    background-color:            transparent;
+    background-color: @surface-variant;
     children:                    [ "inputbar", "listview" ];
 }
 
@@ -68,7 +68,7 @@ listview {
     fixed-height:                true;
     fixed-columns:               true;
     spacing:                     10px;
-    background-color:            transparent;
+    background-color: @surface-variant;
 }
 
 

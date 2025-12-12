@@ -60,7 +60,8 @@
     "tooltip-format-wifi": "  {essid}  ({signalStrength}%)",
     "on-click": "~/.config/waybar/scripts/connection.sh wifi",
     "on-scroll-up": "~/.config/waybar/scripts/volume.sh up",
-    "on-scroll-down": "~/.config/waybar/scripts/volume.sh down"
+    "on-scroll-down": "~/.config/waybar/scripts/volume.sh down",
+    "on-click-right": "nmcli radio wifi off && nmcli radio wifi on"
   },
 
   "network": {
@@ -81,7 +82,8 @@
     "tooltip": true,
     "on-click": "~/.config/waybar/scripts/connection.sh wifi",
     "on-scroll-up": "~/.config/waybar/scripts/volume.sh up",
-    "on-scroll-down": "~/.config/waybar/scripts/volume.sh down"
+    "on-scroll-down": "~/.config/waybar/scripts/volume.sh down",
+    "on-click-right": "nmcli radio wifi off && nmcli radio wifi on"
   },
 
   // BLUETOOTH ICON AND CONNECTED DEVICE
@@ -104,7 +106,9 @@
     "tooltip-format-enumerate-connected": "{device_alias}",
     "on-click": "~/.config/waybar/scripts/connection.sh bluetooth",
     "on-scroll-up": "~/.config/waybar/scripts/volume.sh up",
-    "on-scroll-down": "~/.config/waybar/scripts/volume.sh down"
+    "on-scroll-down": "~/.config/waybar/scripts/volume.sh down",
+    "on-click-left": "rfkill unblock bluetooth",
+    "on-click-right": "rfkill block bluetooth"
   },
 
   "bluetooth#device": {
@@ -114,7 +118,8 @@
     "format-connected": "{device_alias} {device_battery_percentage}%   ",
     "on-click": "~/.config/waybar/scripts/connection.sh bluetooth",
     "on-scroll-up": "~/.config/waybar/scripts/volume.sh up",
-    "on-scroll-down": "~/.config/waybar/scripts/volume.sh down"
+    "on-scroll-down": "~/.config/waybar/scripts/volume.sh down",
+    "on-click-right": "rfkill block bluetooth"
   },
 
   // POWER MENU
