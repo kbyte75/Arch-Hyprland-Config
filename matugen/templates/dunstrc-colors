@@ -1,8 +1,8 @@
 [global]
 monitor = 0
 follow = none
-width = (140,400)
-height = 400
+width = (140, 400)
+height = (60, 400)
 origin = top-center
 offset = 10x20
 scale = 0
@@ -34,7 +34,7 @@ stack_duplicates = true
 hide_duplicate_count = false
 show_indicators = false
 icon_position = left
-min_icon_size = 0
+min_icon_size = 16
 max_icon_size = 28
 icon_path = ~/.icons/MacTahoe/16x16/status/:/usr/share/icons/gnome/16x16/devices/
 icon_theme= MacTahoe
@@ -48,13 +48,15 @@ corner_radius = 8
 ignore_dbusclose = false
 force_xwayland = false
 force_xinerama = false
-mouse_left_click = close_current
+enable_actions = yes  
+mouse_left_click = do_action, close_current
 mouse_middle_click = do_action, close_current
 mouse_right_click = close_all
 separator_color = frame
 frame_color = "{{colors.secondary.default.hex}}"
 highlight = "{{colors.primary.default.hex}}"
 separator_color= "{{colors.outline.default.hex}}"
+
 [experimental]
 per_monitor_dpi = false
 [urgency_low]

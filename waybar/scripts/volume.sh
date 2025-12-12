@@ -45,7 +45,7 @@ update_volume() {
         icon=$icon_path/volume-low.png
     fi
 
-    notify-send "$notify_text" -i "$icon" -h int:value:"$new_volume" -r 9999        
+    notify-send "$notify_text" -i "$icon" -h int:value:"$new_volume" -r 9999 -r 9999   
 }
 
 # If no argument is passed, increase volume by 5%

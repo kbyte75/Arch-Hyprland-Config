@@ -123,7 +123,7 @@ tooltip label {
 }
 /* cubic-bezier(0.55, -0.68, 0.48, 1.682) */
 #workspaces button {
-  margin: 8px 2px;
+  margin: 9px 2px;
   padding: 0 4px;
   border-radius: 6px;
   transition: all 0.3s cubic-bezier(0.55, -0.68, 0.48, 1);
@@ -131,6 +131,7 @@ tooltip label {
 }
 #workspaces button.active {
   padding: 0 14px;
+  margin: 8px 2px;
   background-color: @primary;
 }
 
