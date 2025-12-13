@@ -29,6 +29,7 @@ abbr -a wsstop waydroid session stop
 abbr -a update sudo pacman -Syyu
 abbr -a clean  'sudo pacman -Sc;sudo pacman -Rns $(pacman -Qtdq) --noconfirm;yay -Rns $(yay -Qdtq 2>/dev/null); yay -Scc'
 abbr -a ys     'yay -S --needed --noconfirm'
+abbr -a i      'sudo pacman -S --needed --noconfirm'
 
 # Optional: unlock pacman database (use only when needed)
 # abbr -a unlock 'sudo rm /var/lib/pacman/db.lck'

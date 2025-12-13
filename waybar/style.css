@@ -1,6 +1,6 @@
 @import "colors.css";
 
-@define-color light_bg rgba(255, 255, 255, 0.15);
+/* @define-color light_bg rgba(255, 255, 255, 0.15); */
 
 * {
   margin: 0;
@@ -49,7 +49,7 @@ window#waybar.empty #window {
 #custom-title,
 #network.disconnected,
 #custom-screenshot:hover {
-  background-color: @light_bg;
+  background-color: alpha(@secondary, 0.3);
 }
 
 #custom-separator,
@@ -159,6 +159,7 @@ tooltip label {
 #network {
   min-width: 16px;
   border-radius: 0px;
+  padding-right: 8px;
 }
 
 #bluetooth {
@@ -180,33 +181,35 @@ tooltip label {
 
 #custom-power {
   font-size: 16px;
-  min-width: 32px;
-  padding-right: 1px;
+  /* min-width: 32px; */
+  padding-right: 12px;
 }
 
 #power-menu {
   margin-right: 5px;
   border-radius: 6px;
 }
-
-#custom-logout:hover,
-#custom-power:hover,
-#custom-reboot:hover {
-  border-radius: 6px;
-  color: @primary;
-  background-color: @outline;
+#power-menu:hover {
+  margin-left: 8px;
+  transition: all 0.3s ease-in-out;
+  background-color: @primary;
 }
-/* #power-menu:hover #custom-reboot,
+
+#power-menu:hover #custom-power {
+  padding-right: 1px;
+  min-width: 32px;
+}
+#power-menu:hover #custom-reboot,
 #power-menu:hover #custom-logout,
 #power-menu:hover #custom-power {
+  transition: all 0.3s ease-in-out;
   color: @surface-variant;
 }
-#power-menu:hover {
-  padding-left: 8px;
-  background-color: @secondary;
-} */
 
-#menu {
-  margin-top: 65px;
-  margin-right: 0;
+#power-menu:hover #custom-reboot:hover,
+#power-menu:hover #custom-logout:hover,
+#power-menu:hover #custom-power:hover {
+  border-radius: 6px;
+  background-color: alpha(@outline, 0.3);
+  /* color: #fff; */
 }

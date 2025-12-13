@@ -86,7 +86,6 @@ main() {
   log "Setting executable permissions..."
   sudo chmod +x $HOME/.config/hypr/scripts/*.sh 2>/dev/null || true
   sudo chmod +x $HOME/.config/waybar/scripts/*.sh 2>/dev/null || true
-  sudo chmod +x $HOME/.config/rofi/scripts/*.sh 2>/dev/null || true
   sudo chmod +x $HOME/.config/waybar/scripts/weather.py 2>/dev/null || true
 
 

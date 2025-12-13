@@ -16,7 +16,7 @@ case "${1:-}" in
         geom=$(hyprctl activewindow -j | jq -r '"\(.at[0]),\(.at[1]) \(.size[0])x\(.size[1])"')
         grim -g "$geom" "$OUTPUT_DIR"
         ;;
-    *)       echo "required arguments:[full|region|window]"; exit 1 ;;
+    *)       echo "arguments:[full|region|window]"; exit 1 ;;
 esac
 
 notify-send "Screenshot saved in" " $OUTPUT_DIR" -i $HOME/.config/hypr/icons/screen.png
