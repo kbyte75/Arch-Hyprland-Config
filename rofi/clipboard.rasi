@@ -4,10 +4,12 @@ configuration {
     hover-select: true;
     me-select-entry: "";
     me-accept-entry: "MousePrimary";
-    
-    
+  //  me-accept-entry: "MouseSecondary";
 }
-@import                          "~/.config/rofi/colors.rasi"
+
+
+
+@import "~/.config/rofi/colors.rasi"
 
 *{
     border: 0;

@@ -16,9 +16,7 @@
   },
   "tray": {
     "spacing": 10,
-    "show-passive-items": true,
-    "on-scroll-up": "",
-    "on-scroll-down": ""
+    "show-passive-items": true
   },
 
   // DAY & TIME
@@ -102,7 +100,7 @@
     "format-connected": "󰂱 ",
     // "format-connected-battery": "󰂱 {device_battery_percentage}%",
     "tooltip-format": "󰂯 {controller_alias}",
-    "tooltip-format-connected": "Connected \n {device_enumerate}   󰂎 {device_battery_percentage}%",
+    "tooltip-format-connected": "",
     "tooltip-format-enumerate-connected": "{device_alias}",
     "on-click": "~/.config/waybar/scripts/connection.sh bluetooth",
     "on-scroll-up": "~/.config/waybar/scripts/volume.sh up",

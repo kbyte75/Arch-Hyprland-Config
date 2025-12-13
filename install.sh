@@ -39,7 +39,7 @@ main() {
 
   # Install dependencies
   log "Installing required dependecies..."
-  sudo pacman -S --noconfirm --needed make cmake rsync base-devel git nano python-pyquery nwg-look font-manager blueman nm-connection-editor adw-gtk-theme || error "Failed to install dependencies. Please try install them manually or contact the developer."
+  sudo pacman -S --noconfirm --needed make cmake rsync base-devel git nano python-pyquery grim slurp nwg-look font-manager blueman nm-connection-editor adw-gtk-theme xdg-desktop-portal-hyprland xdg-desktop-portal-gtk || error "Failed to install dependencies. Please try install them manually or contact the developer."
   
   # Clone repo
   log "Cloning repository..."
@@ -48,7 +48,7 @@ main() {
 
   # Install Packages
   log "Installing main packages..."
-  sudo pacman -S --noconfirm --needed waybar swww rofi hyprlock hypridle hyprshot matugen fish fastfetch kitty nautilus || error "Failed to install required packages.Please try install them manually or contact the developer."
+  sudo pacman -S --noconfirm --needed waybar swww rofi hyprlock hypridle hyprshot matugen fish fastfetch kitty nautilus cliphist wl-clipboard || error "Failed to install required packages.Please try install them manually or contact the developer."
   
   # Change default shell to fish
   log "Changing default shell to fish..."
@@ -100,6 +100,7 @@ main() {
   echo "   • Bibata Modern Ice: https://www.gnome-look.org/p/1197198"
   echo "   • MacTahoe Icons: https://www.gnome-look.org/p/2299216"
   echo "   • Rubik, Poppins, A Black Lives, Voice In My Head, FiraCode Nerd Font"
+  echo "Copy Icons in ~/.icons directory."
   echo
   echo "Enjoy your new Hyprland rice!"
 }
