@@ -1,0 +1,7 @@
+@import "colors.rasi" * {
+  border: 0;
+  font: "Rubik 10";
+  font-weight: 600;
+  text-color: @surface-variant;
+  placeholder-color: @surface-variant;
+}

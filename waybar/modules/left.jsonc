@@ -1,0 +1,54 @@
+{
+  "group/stats": {
+    "orientation": "inherit",
+    "click-to-reveal": false,
+    "drawer": {
+      "transition-duration": 500,
+      "transition-left-to-right": true
+    },
+    "modules": ["custom/space", "disk"]
+  },
+
+  "disk": {
+    "interval": 30,
+    "format": "󰝰  {specific_free:0.0f} GB",
+    "path": "/",
+    "unit": "GB"
+  },
+
+  "custom/space": {
+    "format": " ",
+    "tooltip": false,
+    "on-scroll-up": "~/.config/waybar/scripts/volume.sh up",
+    "on-scroll-down": "~/.config/waybar/scripts/volume.sh down"
+  },
+
+  "cpu": {
+    "interval": 1,
+    "tooltip": false,
+    "format": "  {usage}%",
+    "states": {
+      "warning": 60,
+      "critical": 80
+    }
+  },
+
+  "memory": {
+    "interval": 1,
+    "format": "󰋊 {percentage}%",
+    "tooltip-format": "{used:0.1f}GB / {total}GB",
+    "states": {
+      "warning": 60,
+      "critical": 80
+    }
+  },
+
+  "temperature": {
+    "interval": 1,
+    "tooltip": false,
+    "thermal-zone": 2,
+    "critical-threshold": 70,
+    "format": " {temperatureC}°C",
+    "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input"
+  }
+}

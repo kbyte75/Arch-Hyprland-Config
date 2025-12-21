@@ -1,0 +1,12 @@
+@define-color background alpha(#d1eca0, 0.1);
+@define-color primary #d1eca0;
+@define-color on-primary #233600;
+@define-color secondary #dde6c6;
+@define-color on-secondary #2b331d;
+@define-color success #bcece5;
+@define-color surface-variant #45483d;
+@define-color surface #12140e;
+@define-color on-surface #e3e3d8;
+@define-color on-surface-variant #c5c8b9;
+@define-color outline #8f9285;
+@define-color outline-variant #45483d;

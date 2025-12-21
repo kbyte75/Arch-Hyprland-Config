@@ -1,0 +1,98 @@
+{
+  "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
+
+  "logo": {
+    "source": "~/.config/fastfetch/image.png",
+    "type": "kitty-direct",
+    "height": 14,
+    "width": 28,
+    "padding": {
+      "top": 1,
+      "left": 2
+    }
+  },
+  "modules": [
+    {
+      "type": "custom",
+      "format": "\uf4bc HARDWARE",
+      "outputColor": "green"
+    },
+    {
+      "type": "cpu",
+      "key": "CPU",
+      "keyColor": "reset_"
+    },
+    {
+      "type": "gpu",
+      "key": "GPU",
+      "keyColor": "italic_"
+    },
+    {
+      "type": "memory",
+      "key": "RAM",
+      "keyColor": "reset_"
+    },
+    {
+      "type": "disk",
+      "key": "STORAGE",
+      "keyColor": "reset_"
+    },
+    "break",
+    // #############  SOFTWARE SECTION
+    {
+      "type": "custom",
+      "format": "\uf40e SOFTWARE",
+      "outputColor": "green"
+    },
+    {
+      "type": "os",
+      "key": "OS",
+      "keyColor": "reset_"
+    },
+    {
+      "type": "kernel",
+      "key": "KERNAL",
+      "keyColor": "reset_"
+    },
+    {
+      "type": "bios",
+      "keyColor": "reset_"
+    },
+    {
+      "type": "packages",
+      "key": "PACKAGES",
+      "keyColor": "reset_"
+    },
+    {
+      "type": "de",
+      "key": "DE",
+      "keyColor": "reset_"
+    },
+    {
+      "type": "lm",
+      "key": "LM",
+      "keyColor": "reset_"
+    },
+    {
+      "type": "wm",
+      "key": "LM",
+      "keyColor": "reset_"
+    },
+    {
+      "type": "wmtheme",
+      "keyColor": "reset_"
+    },
+    {
+      "type": "terminal",
+      "keyColor": "reset_"
+    },
+
+    {
+      "type": "uptime"
+    },
+    {
+      "type": "colors",
+      "symbol": "square"
+    }
+  ]
+}

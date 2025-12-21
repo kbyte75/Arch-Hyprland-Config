@@ -1,0 +1,156 @@
+{
+  // BACKGROUND APPS (TRAY)
+  "group/tray": {
+    "orientation": "horizontal",
+    "drawer": {
+      "transition-duration": 500,
+      "transition-left-to-right": true
+    },
+    "modules": ["custom/space", "tray"]
+  },
+  "custom/space": {
+    "format": " ",
+    "tooltip": false,
+    "on-scroll-up": "$HOME/.config/waybar/scripts/volume.sh up",
+    "on-scroll-down": "$HOME/.config/waybar/scripts/volume.sh down"
+  },
+  "tray": {
+    "spacing": 10,
+    "show-passive-items": true
+  },
+
+  // DAY & TIME
+  "group/clock": {
+    "orientation": "inherit",
+    "drawer": {
+      "transition-duration": 500,
+      "transition-left-to-right": false
+    },
+    "modules": ["clock", "clock#day"]
+  },
+
+  "clock": {
+    "tooltip": false,
+    "format": "{:%I:%M}"
+  },
+
+  "clock#day": {
+    "tooltip": false,
+    "format": "{:%A}"
+  },
+
+  // BLUETOOTH ICON AND CONNECTED DEVICE
+  "group/bluetooth-modules": {
+    "orientation": "inherit",
+    "drawer": {
+      "transition-duration": 500,
+      "transition-left-to-right": true
+    },
+    "modules": ["bluetooth", "bluetooth#device"]
+  },
+
+  "bluetooth": {
+    "format": "󰂯 ",
+    "format-disabled": "󰂲 ",
+    "format-connected": "󰂱 ",
+    // "format-connected-battery": "󰂱 {device_battery_percentage}%",
+    "tooltip-format": "󰂯 {controller_alias}",
+    "tooltip-format-connected": "",
+    "tooltip-format-enumerate-connected": "{device_alias}",
+    "on-click": "$HOME/.config/waybar/scripts/connection.sh bluetooth",
+    "on-scroll-up": "$HOME/.config/waybar/scripts/volume.sh up",
+    "on-scroll-down": "$HOME/.config/waybar/scripts/volume.sh down",
+    "on-click-left": "rfkill unblock bluetooth",
+    "on-click-right": "rfkill block bluetooth"
+  },
+
+  "bluetooth#device": {
+    "format": "",
+    "tooltip": false,
+    "format-disabled": "",
+    "format-connected": "{device_alias} {device_battery_percentage}%   ",
+    "on-click": "$HOME/.config/waybar/scripts/connection.sh bluetooth",
+    "on-scroll-up": "$HOME/.config/waybar/scripts/volume.sh up",
+    "on-scroll-down": "$HOME/.config/waybar/scripts/volume.sh down",
+    "on-click-right": "rfkill block bluetooth"
+  },
+
+  // WIFI ICON & SPEED
+  "group/network-modules": {
+    "orientation": "inherit",
+    "drawer": {
+      "transition-duration": 500,
+      "transition-left-to-right": true
+    },
+    "modules": ["network", "network#speed"]
+  },
+
+  "network#speed": {
+    "interval": 1,
+    "interface": "wlan0",
+    "format": " {bandwidthTotalBytes} ",
+    "format-disconnected": "",
+    "tooltip-format-disconnected": "",
+    "tooltip-format-wifi": "  {essid}  ({signalStrength}%)",
+    "on-click": "$HOME/.config/waybar/scripts/connection.sh wifi",
+    "on-scroll-up": "$HOME/.config/waybar/scripts/volume.sh up",
+    "on-scroll-down": "$HOME/.config/waybar/scripts/volume.sh down",
+    "on-click-right": "nmcli radio wifi off && nmcli radio wifi on"
+  },
+
+  "network": {
+    "interface": "wlan0",
+    "format": "󰤩 ",
+    "format-wifi": " ",
+    "format-icons": {
+      "low": "",
+      "high": ""
+    },
+    "tooltip-format": "",
+    "tooltip-format-wifi": "  {essid}  ({signalStrength}%)",
+    "format-ethernet": "{ipaddr}/{cidr} 󰊗",
+    "tooltip-format-ethernet": "",
+    "format-disconnected": "󰤭 ", //An empty format will hide the module.
+    "tooltip-format-disconnected": "Disconnected",
+    "max-length": 60,
+    "tooltip": true,
+    "on-click": "$HOME/.config/waybar/scripts/connection.sh wifi",
+    "on-scroll-up": "$HOME/.config/waybar/scripts/volume.sh up",
+    "on-scroll-down": "$HOME/.config/waybar/scripts/volume.sh down",
+    "on-click-right": "nmcli radio wifi off && nmcli radio wifi on"
+  },
+
+  // POWER MENU
+  "group/power-menu": {
+    "orientation": "horizontal",
+    "drawer": {
+      "transition-duration": 500,
+      "transition-left-to-right": false
+    },
+    "modules": ["custom/power", "custom/logout", "custom/reboot"]
+  },
+  "custom/power": {
+    "format": "",
+    "tooltip": true,
+    "on-click": "shutdown now",
+    "tooltip-format": "Shutdown",
+    "on-scroll-up": "$HOME/.config/waybar/scripts/volume.sh up",
+    "on-scroll-down": "$HOME/.config/waybar/scripts/volume.sh down"
+  },
+  "custom/logout": {
+    "format": "󰿅",
+    "tooltip": true,
+    "on-click": "loginctl kill-session $XDG_SESSION_ID",
+    "tooltip-format": "Logout",
+    "on-scroll-up": "$HOME/.config/waybar/scripts/volume.sh up",
+    "on-scroll-down": "$HOME/.config/waybar/scripts/volume.sh down"
+  },
+  "custom/reboot": {
+    "format": "󰑓",
+    "tooltip": true,
+    "on-click": "reboot",
+    "tooltip-format": "Reboot",
+    "on-scroll-up": "$HOME/.config/waybar/scripts/volume.sh up",
+    "on-scroll-down": "$HOME/.config/waybar/scripts/volume.sh down"
+  }
+}

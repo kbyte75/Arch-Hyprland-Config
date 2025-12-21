@@ -1,0 +1,80 @@
+{
+  //  workbench
+  "window.titleBarStyle": "native",
+  "window.menuStyle": "native",
+  "workbench.layoutControl.enabled": false, // explore, source control, extension
+  "window.commandCenter": false,
+  "chat.commandCenter.enabled": false,
+  "chat.agent.enabled": false,
+  "workbench.activityBar.iconClickBehavior": "toggle",
+  "workbench.sideBar.location": "right",
+  "workbench.statusBar.visible": false,
+  "workbench.startupEditor": "none",
+  "workbench.tips.enabled": false,
+  "workbench.secondarySideBar.defaultVisibility": "hidden",
+  "breadcrumbs.enabled": false,
+
+  "window.enableMenuBarMnemonics": false,
+  "editor.stickyScroll.enabled": false,
+  "editor.stickyTabStops": false,
+  "workbench.tree.enableStickyScroll": false,
+  "workbench.list.smoothScrolling": true,
+  "editor.suggest.showFiles": true,
+  //   Editor
+  "editor.minimap.enabled": false,
+  "editor.minimap.autohide": "none",
+  "editor.suggestFontSize": 14,
+  "editor.suggestLineHeight": 24,
+  "terminal.integrated.fontSize": 14,
+  "editor.wordWrap": "on",
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.smoothScrolling": true,
+  // font
+  "editor.fontFamily": "Geist Mono, JetBrains Mono",
+  "editor.fontWeight": "normal",
+  "editor.fontLigatures": true,
+  "editor.lineHeight": 1.7,
+  "workbench.iconTheme": "charmed-warm",
+  "charmed-icons.outlineFolders": "never",
+  // Theme
+  "explorer.confirmDelete": false,
+  "workbench.colorTheme": "Everforest Dark",
+  "everforest.darkContrast": "hard",
+  "everforest.italicComments": false,
+  "everforest.darkCursor": "yellow",
+  "everforest.darkSelection": "yellow",
+  "everforest.italicKeywords": false,
+  "everforest.darkWorkbench": "flat",
+  //  git
+  "git.enableSmartCommit": true,
+  "git.confirmSync": false,
+  "workbench.editor.empty.hint": "hidden",
+  "git.enabled": true,
+  //  cursor
+  "editor.cursorStyle": "block",
+  "editor.cursorSmoothCaretAnimation": "explicit",
+  "editor.find.cursorMoveOnType": true,
+  "editor.cursorBlinking": "smooth",
+
+  // sherrscript
+  "[shellscript]": {
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "mkhl.shfmt"
+  },
+  // Css errors / warnings
+  "css.lint.propertyIgnoredDueToDisplay": "ignore",
+  "files.associations": {
+    "*.rasi": "css"
+  },
+  "css.validate": false,
+  "window.menuBarVisibility": "toggle",
+  "qt-core.additionalQtPaths": [
+    {
+      "name": "Qt-5.15.18-linux-g++_from_PATH",
+      "path": "/usr/bin/qmake"
+    }
+  ],
+  "qt-qml.doNotAskForQmllsDownload": true,
+  "explorer.confirmDragAndDrop": false
+}
