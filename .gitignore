@@ -20,6 +20,7 @@ mimeapps.list
 QtProject.conf
 user-dirs*
 ibus*
+quickshell
 
 Code - OSS/**
 VSCodium/**

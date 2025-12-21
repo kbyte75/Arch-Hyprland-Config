@@ -76,5 +76,11 @@
     }
   ],
   "qt-qml.doNotAskForQmllsDownload": true,
-  "explorer.confirmDragAndDrop": false
+  "explorer.confirmDragAndDrop": false,
+  "githubPullRequests.remotes": [
+    "origin",
+    "upstream",
+    "main",
+    "Arch-Hyprland-Config"
+  ]
 }
