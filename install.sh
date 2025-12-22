@@ -2,13 +2,7 @@
 # shellcheck disable=SC1091
 
 # ================================================================
-#
-#    ██╗  ██╗██████╗ ██╗   ██╗████████╗███████╗███████╗███████╗
-#    ██║ ██╔╝██╔══██╗╚██╗ ██╔╝╚══██╔══╝██╔════╝╚════██║██╔════╝
-#    █████╔╝ ██████╔╝ ╚████╔╝    ██║   █████╗      ██╔╝███████╗
-#    ██╔═██╗ ██╔══██╗  ╚██╔╝     ██║   ██╔══╝     ██╔╝ ╚════██║
-#    ██║  ██╗██████╔╝   ██║      ██║   ███████╗   ██║  ███████║
-#
+#  Hyprland Installer — KBYTE75
 # ================================================================
 
 set -Eeuo pipefail
@@ -18,7 +12,10 @@ IFS=$'\n\t'
 # Global Configuration
 # ==============================================================================
 readonly REPO_URL="https://github.com/kbyte75/Arch-Hyprland-Config.git"
+readonly WALLPAPER_REPO_URL="https://github.com/kbyte75/wallpapers.git"
+
 readonly CONFIG_DIR="$HOME/.config"
+readonly WALLPAPER_DIR="$HOME/Pictures/Wallpapers"
 
 readonly STATE_DIR="$HOME/.local/state/hyprland-installer"
 readonly LOG_FILE="$STATE_DIR/install.log.json"
@@ -26,23 +23,28 @@ readonly STATE_FILE="$STATE_DIR/state.txt"
 readonly BACKUP_DIR="$STATE_DIR/backup"
 readonly CONFIG_BACKUP="$BACKUP_DIR/config-full"
 
-readonly WALLPAPER_REPO_URL="https://github.com/kbyte75/wallpapers.git"
-readonly WALLPAPER_DIR="$HOME/Pictures/Wallpapers"
-
 # ANSI colors
 readonly GREEN='\033[0;32m'
 readonly YELLOW='\033[1;33m'
 readonly RED='\033[0;31m'
 readonly NC='\033[0m'
 
-# Runtime flags
+# ==============================================================================
+# Runtime Flags
+# ==============================================================================
 DRY_RUN=false
 CI_MODE=false
-ROLLBACK=false
 UNINSTALL=false
 
+# User-selected options (defaults)
+update_vscodium_icons=false
+INSTALL_WALLPAPERS=false
+SET_FISH_SHELL=true
+CONFIGURE_BOOTLOADER=true
+REBOOT_AFTER=false
+
 STEP=0
-TOTAL_STEPS=13
+TOTAL_STEPS=14
 
 mkdir -p "$STATE_DIR" "$BACKUP_DIR"
 
@@ -101,32 +103,25 @@ aur_install() {
 	run yay -S --needed --noconfirm "$@"
 }
 
-check_os() { command -v pacman >/dev/null || die "Arch Linux only."; }
+check_os() {
+	command -v pacman >/dev/null || die "This installer supports Arch Linux only."
+}
 
 # ==============================================================================
-# Args & Checks
+# Arguments
 # ==============================================================================
-
 show_help() {
-	cat <<'EOF'
-Hyprland Installer
+	cat <<EOF
+Hyprland Installer — KBYTE75
 
 Usage:
   install.sh [OPTIONS]
 
 Options:
-  -h, --help            Show this help message and exit
-      --dry-run         Show what would be executed without making changes
-      --ci              Run in CI / non-interactive mode (no prompts)
-      --rollback        Restore ~/.config from the last backup
-      --uninstall       Remove installed packages and installer state
-
-Examples:
-  ./install.sh
-  ./install.sh --dry-run
-  ./install.sh --ci
-  ./install.sh --rollback
-  ./install.sh --uninstall
+  --dry-run           Show what would be executed
+  --ci                Non-interactive mode
+  --uninstall         Remove installed packages and state
+  -h, --help          Show this help
 EOF
 }
 
@@ -137,37 +132,19 @@ parse_args() {
 			show_help
 			exit 0
 			;;
-		--dry-run)
-			DRY_RUN=true
-			;;
-		--ci | --non-interactive)
-			CI_MODE=true
-			;;
-		--rollback)
-			ROLLBACK=true
-			;;
-		--uninstall)
-			UNINSTALL=true
-			;;
-		*)
-			die "Unknown argument: $arg (use --help)"
-			;;
+		--dry-run) DRY_RUN=true ;;
+		--ci) CI_MODE=true ;;
+		--uninstall) UNINSTALL=true ;;
+		*) die "Unknown argument: $arg" ;;
 		esac
 	done
 }
-# ==============================================================================
-# Rollback / Uninstall
-# ==============================================================================
-rollback() {
-	step "Rollback"
-	[[ -d "$CONFIG_BACKUP" ]] || die "No backup found"
-	run rm -rf "$CONFIG_DIR"
-	run cp -a "$CONFIG_BACKUP" "$CONFIG_DIR"
-	log "Rollback completed"
-}
 
+# ==============================================================================
+# Uninstall
+# ==============================================================================
 uninstall() {
-	step "Uninstall"
+	step "Uninstalling"
 	local p=() a=()
 	while read -r e; do
 		case "$e" in
@@ -183,66 +160,106 @@ uninstall() {
 }
 
 # ==============================================================================
+# User Configuration Phase
+# ==============================================================================
+get_user_choice() {
+	step "Collecting user preferences"
+
+	if $CI_MODE; then
+		warn "CI mode: using defaults"
+		update_vscodium_icons=true
+		INSTALL_WALLPAPERS=false
+		REBOOT_AFTER=false
+		return
+	fi
+
+	read -r -p "Install VSCodium (VSCode alternative)? [y/N]: " r || true
+	[[ "$r" =~ ^[Yy]$ ]] && update_vscodium_icons=true
+
+	read -r -p "Download wallpapers? [y/N]: " r || true
+	[[ "$r" =~ ^[Yy]$ ]] && INSTALL_WALLPAPERS=true
+
+	read -r -p "Set fish as default shell? [Y/n]: " r || true
+	[[ "$r" =~ ^[Nn]$ ]] && SET_FISH_SHELL=false
+
+	read -r -p "Configure bootloader timeout? [Y/n]: " r || true
+	[[ "$r" =~ ^[Nn]$ ]] && CONFIGURE_BOOTLOADER=false
+
+	read -r -p "Reboot automatically after install? [y/N]: " r || true
+	[[ "$r" =~ ^[Yy]$ ]] && REBOOT_AFTER=true
+
+	echo
+	log "Configuration summary:"
+	echo "  VSCodium:        $update_vscodium_icons"
+	echo "  Wallpapers:      $INSTALL_WALLPAPERS"
+	echo "  Fish shell:      $SET_FISH_SHELL"
+	echo "  Bootloader tweak:$CONFIGURE_BOOTLOADER"
+	echo "  Reboot:    $REBOOT_AFTER"
+
+	echo
+	read -r -p "Proceed with installation? [Y/n]: " r || true
+	[[ "$r" =~ ^[Nn]$ ]] && die "Installation aborted"
+}
+
+# ==============================================================================
 # Phases
 # ==============================================================================
-phase_update_system() {
-	step "Prepareing System update"
+updating_system() {
+	step "Preparing system update"
 	run sudo pacman -Syu --noconfirm
 }
 
-phase_dependencies() {
-	step "Installing Base dependencies"
-	pacman_install base-devel git rsync jq nano grim slurp shfmt \
-		nwg-look font-manager imagemagick blueman nm-connection-editor python-pyquery \
-		adw-gtk-theme qt6-base xdg-desktop-portal-hyprland xdg-desktop-portal-gtk
+install_dependencies() {
+	step "Installing base dependencies"
+	pacman_install base-devel git rsync jq feh eza nano grim slurp shfmt \
+		nwg-look font-manager imagemagick blueman nm-connection-editor \
+		python-pyquery adw-gtk-theme qt6-base starship \
+		xdg-desktop-portal-hyprland xdg-desktop-portal-gtk
 }
 
-phase_main_packages() {
-	step "Installing Required Packages"
+install_main_packages() {
+	step "Installing main packages"
 	pacman_install waybar swww rofi hyprlock hypridle matugen fish \
 		fastfetch kitty nautilus cliphist wl-clipboard
 }
 
-phase_shell() {
-	step "Change Default shell to fish"
-	command -v fish &>/dev/null && run chsh -s /usr/bin/fish "$USER" || true
+change_shell() {
+	$SET_FISH_SHELL || return 0
+	step "Setting fish as default shell"
+	command -v fish &>/dev/null && run sudo chsh -s /usr/bin/fish "$USER"
 }
 
-phase_yay() {
-	step "Setting up Yay Package Manager"
+install_yay() {
+	step "Installing yay"
 	command -v yay &>/dev/null && return
 	run git clone https://aur.archlinux.org/yay.git /tmp/yay
 	run bash -c 'cd /tmp/yay && makepkg -si --noconfirm'
 }
 
-phase_rust_conflict() {
-	step "Rust conflict resolution"
-	if pacman -Qi rust &>/dev/null && ! pacman -Qi rustup &>/dev/null; then
-		warn "Replacing rust with rustup"
-		run sudo pacman -Rns --noconfirm rust
-	fi
-}
+# phase_prepare_vscodium() {
+# 	$update_vscodium_icons || return 0
+# 	pgrep -f codium &>/dev/null && run pkill -f codium || true
+# }
 
-phase_prepare_vscodium() {
-	#  if vscodium is running then terminate
-	pgrep -f codium &>/dev/null && run pkill -f codium || true
-}
-
-phase_aur_packages() {
+install_yay_packages() {
 	step "Installing AUR packages"
-	aur_install hypremoji vscodium-bin ibus-m17n m17n-db
+	local aur_pkgs=(hypremoji ibus-m17n m17n-db)
+	$update_vscodium_icons && pgrep -f codium &>/dev/null && run pkill -f codium || true #check is vscodium running
+	$update_vscodium_icons && aur_pkgs+=(vscodium-bin)
+	aur_install "${aur_pkgs[@]}"
 }
 
-phase_vscodium_icons() {
-	step "Changing icon  VSCodium  to VSCode "
-	command -v codium &>/dev/null || return
+update_vscodium_icons() {
+	$update_vscodium_icons || return 0
+	command -v codium &>/dev/null || return 0
+	step "Adjusting VSCodium icons"
 	for f in /usr/share/applications/codium*.desktop; do
 		[[ -f "$f" ]] && run sudo sed -i 's/^Icon=.*/Icon=vscode/' "$f"
 	done
 }
 
-phase_clone_repo() {
-	step "Cloning Config in ~/.config"
+clone_config_repo() {
+	step "Installing configuration files"
 
 	if [[ -d "$CONFIG_DIR" && ! -d "$CONFIG_BACKUP" ]]; then
 		log "Backing up ~/.config"
@@ -256,66 +273,53 @@ phase_clone_repo() {
 	run rm -rf "$tmp"
 }
 
-phase_permissions() {
-	step "Setting up Permissions."
+setup_permissions() {
+	step "Fixing script permissions"
 	run chmod +x "$CONFIG_DIR"/hypr/scripts/*.sh 2>/dev/null || true
-	run chmod +x "$CONFIG_DIR"/waybar/scripts/*.sh 2>/dev/null || true
-	run chmod +x "$CONFIG_DIR"/waybar/scripts/*.py 2>/dev/null || true
+	run chmod +x "$CONFIG_DIR"/waybar/scripts/*.{sh,py} 2>/dev/null || true
 }
 
-phase_wallpapers() {
-	step "Download Wallpapers"
-
-	# Never prompt in CI
-	if $CI_MODE; then
-		warn "CI mode detected; skipping wallpaper download"
-		return 0
-	fi
-
-	echo
-	read -r -p "(Optional) Do you want to download wallpapers? (~$(du -sh "$WALLPAPER_DIR" 2>/dev/null | awk '{print $1}' || echo 'unknown size'))? [y/N]: " reply || true
-
-	if [[ ! "$reply" =~ ^[Yy]$ ]]; then
-		log "Skipped wallpaper download."
-		return 0
-	fi
+clone_wallpaper_repo() {
+	$INSTALL_WALLPAPERS || return 0
+	step "Installing wallpapers"
 
 	mkdir -p "$HOME/Pictures"
-
 	local tmp
 	tmp="$(mktemp -d)"
 
-	log "Cloning wallpaper repository"
 	run git clone "$WALLPAPER_REPO_URL" "$tmp"
-
-	log "Syncing wallpapers to $WALLPAPER_DIR"
 	run mkdir -p "$WALLPAPER_DIR"
-	run rsync -a --delete \
-		--exclude='.git' \
-		"$tmp"/ "$WALLPAPER_DIR"/
-
+	run rsync -a --delete --exclude='.git' "$tmp"/ "$WALLPAPER_DIR"/
 	run rm -rf "$tmp"
-
-	log "Wallpapers downloaded successfully"
+}
+setup_gtk_theme() {
+	# Apply via gsettings (best-effort, non-fatal)
+	if command -v gsettings >/dev/null; then
+		run gsettings set org.gnome.desktop.interface gtk-theme 'adw-gtk-theme' || true
+		# run gsettings set org.gnome.desktop.interface icon-theme 'Adwaita' || true
+		# run gsettings set org.gnome.desktop.interface cursor-theme 'Adwaita' || true
+	fi
 }
 
-phase_optional() {
-	sudo rsync -a --info=progress2 nanorc /etc/
+other_tweaks() {
+	$CONFIGURE_BOOTLOADER || return 0
+	step "Applying optional system tweaks"
 
-	sudo sed -i 's/^timeout .*/timeout 0/' /boot/loader/loader.conf # No Waiting in Systemd boot menu
+	run sudo rsync -a "$CONFIG_DIR/nanorc" /etc/ # Copy nanorc file to /etc
 
-	sudo sed -i 's/^GRUB_TIMEOUT=.*/GRUB_TIMEOUT=0/' /etc/default/grub # No Waiting in Grub boot menu
-	sudo grub-mkconfig -o /boot/grub/grub.cfg
+	if bootctl is-installed >/dev/null 2>&1; then
+		run sudo sed -i.bak 's/^timeout .*/timeout 1/' /boot/loader/loader.conf
+	elif command -v grub-mkconfig >/dev/null 2>&1; then
+		run sudo sed -i.bak 's/^GRUB_TIMEOUT=.*/GRUB_TIMEOUT=1/' /etc/default/grub
+		run sudo grub-mkconfig -o /boot/grub/grub.cfg
+	fi
 }
 
-phase_reboot_prompt() {
-	$CI_MODE && {
-		warn "CI mode: skipping reboot"
-		return
-	}
-	read -r -p "Reboot now? (Recommended) [y/N]: " r || true
-	[[ "$r" =~ ^[Yy]$ ]] && run sudo reboot
+reboot_system() {
+	$REBOOT_AFTER || return 0
+	run sudo reboot
 }
+
 # ==============================================================================
 # Main
 # ==============================================================================
@@ -323,10 +327,6 @@ main() {
 	parse_args "$@"
 	check_os
 
-	$ROLLBACK && {
-		rollback
-		exit 0
-	}
 	$UNINSTALL && {
 		uninstall
 		exit 0
@@ -336,22 +336,22 @@ main() {
 	$DRY_RUN && warn "DRY-RUN mode"
 	$CI_MODE && warn "CI mode"
 
-	phase_update_system
-	phase_dependencies
-	phase_main_packages
-	phase_shell
-	phase_yay
-	phase_rust_conflict
-	phase_prepare_vscodium
-	phase_aur_packages
-	phase_vscodium_icons
-	phase_clone_repo
-	phase_wallpapers
-	phase_permissions
-	phase_optional
-	phase_reboot_prompt
+	get_user_choice
+	updating_system
+	install_dependencies
+	install_main_packages
+	change_shell
+	install_yay
+	# phase_prepare_vscodium
+	install_yay_packages
+	update_vscodium_icons
+	clone_config_repo
+	clone_wallpaper_repo
+	setup_permissions
+	other_tweaks
+	reboot_system
 
-	log "Installation completed"
+	log "Installation completed successfully"
 }
 
 main "$@"

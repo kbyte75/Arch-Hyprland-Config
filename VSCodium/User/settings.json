@@ -62,6 +62,7 @@
     "editor.formatOnSave": true,
     "editor.defaultFormatter": "mkhl.shfmt"
   },
+
   // Css errors / warnings
   "css.lint.propertyIgnoredDueToDisplay": "ignore",
   "files.associations": {
@@ -77,10 +78,8 @@
   ],
   "qt-qml.doNotAskForQmllsDownload": true,
   "explorer.confirmDragAndDrop": false,
-  "githubPullRequests.remotes": [
-    "origin",
-    "upstream",
-    "main",
-    "Arch-Hyprland-Config"
-  ]
+  "workbench.activityBar.location": "hidden",
+  "terminal.integrated.copyOnSelection": true,
+  "terminal.integrated.smoothScrolling": true,
+  "terminal.integrated.stickyScroll.enabled": false
 }

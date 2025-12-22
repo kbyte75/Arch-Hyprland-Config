@@ -12,7 +12,7 @@ format = '[\[$path]($style)\]'
 style = "cyan"
 truncation_length = 2
 truncate_to_repo = true
-truncation_symbol = "../"
+truncation_symbol = "~/../"
 home_symbol = '~'
 read_only_style = 'red'
 
