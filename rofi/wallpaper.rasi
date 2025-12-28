@@ -9,14 +9,14 @@ configuration {
   max-width: 70%;
   location: center;
   anchor: center;
-  padding: 16px;
+  padding: 10px;
   border: 1px;
   border-radius: 16px;
   border-color: @secondary;
   background-color: @surface-variant;
 }
 mainbox {
-  spacing: 16px;
+  spacing: 10px;
   background-color: @surface-variant;
   children: [ "inputbar", "listview"];
 }

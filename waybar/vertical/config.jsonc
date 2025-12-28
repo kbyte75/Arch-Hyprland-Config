@@ -1,10 +1,5 @@
 {
-  "id": 2,
-  // "include": [
-  //   "$HOME/.config/waybar/modules/left.jsonc",
-  //   "$HOME/.config/waybar/modules/middle.jsonc",
-  //   "$HOME/.config/waybar/modules/right.jsonc"
-  // ],
+  "id": "side_bar",
   "layer": "top",
   "position": "right",
   // "width": 35,

@@ -3,7 +3,7 @@
 * {
   margin: 0;
   font-family: "Poppins", "JetBrainsMono NFP";
-  font-weight: 600;
+  font-weight: 400;
   border: none;
   color: #f2efdf;
 }
@@ -91,11 +91,9 @@ tooltip label {
 }
 
 #custom-title {
-  /* font-family: "JetBrainsMono"; */
   font-size: 15px;
   padding-right: 8px;
   font-weight: 600;
-  /* letter-spacing: 0.8px; */
 }
 #disk {
   margin-right: 12px;

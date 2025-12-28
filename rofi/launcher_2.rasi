@@ -1,36 +1,28 @@
 configuration {
-  modi: "drun";
-  show-icons: false;
+  show-icons: true;
+  display-drun: " ";
   hover-select: true;
   me-select-entry: "";
   me-accept-entry: "MousePrimary";
-  /* //  me-accept-entry: "MouseSecondary"; */
 }
-@import "config.rasi"
-  /* @import "~/.config/rofi/colors.rasi" * {
-  border: 0;
-  font: "Rubik 12";
-  font-weight: 200;
-  text-color: @surface-variant;
-  placeholder-color: @surface-variant;
-} */
-  window {
+@import "config.rasi" /*  */ window {
   enabled: true;
   width: 430px;
-  border: 1px;
-  border-color: @secondary;
-  border-radius: 12px;
+  location: center;
+  anchor: center;
   padding: 10px;
+  border: 1px;
+  border-radius: 16px;
+  border-color: @secondary;
   background-color: @surface-variant;
 }
 
 mainbox {
-  enabled: true;
   spacing: 10px;
-  background-color: transparent;
-  orientation: vertical;
   children: [ "inputbar", "listview"];
+  background-color: @surface-variant;
 }
+
 inputbar {
   padding: 12px;
   border-radius: 12px;
@@ -52,38 +44,52 @@ entry {
   border-radius: 8px;
   background-color: @primary;
   cursor: text;
-  placeholder: "Search copied items...";
+  placeholder: "Search applications...";
   background-color: transparent;
 }
 
 listview {
-  lines: 8;
   columns: 1;
-  fixed-height: true;
+  lines: 8;
+  cycle: true;
+  dynamic: true;
   scrollbar: false;
+  fixed-height: true;
+  fixed-columns: true;
   spacing: 6px;
   background-color: @surface-variant;
 }
 
 element {
-  padding: 12px;
-  spacing: 0;
-  text-color: #cdd6f4;
-  border-radius: 10px;
+  enabled: true;
+  spacing: 10px;
+  padding: 8px 12px;
+  border-radius: 12px;
   background-color: transparent;
+  cursor: pointer;
 }
 
+element-text selected,
 element selected {
+  color: @surface-variant;
   background-color: @secondary;
 }
-element-text selected {
-  color: @surface-variant;
+element selected.active {
+  background-color: @surface;
 }
 
+element-icon {
+  background-color: transparent;
+  text-color: inherit;
+  size: 30px;
+  cursor: pointer;
+}
 element-text {
-  color: #fff;
   font: "Rubik 12";
+  color: #fff;
   vertical-align: 0.5;
   cursor: pointer;
+  text-transform: capitalize;
+  font-weight: 800;
   background-color: transparent;
 }
