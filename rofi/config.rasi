@@ -1,7 +1,87 @@
+configuration {
+  hover-select: true;
+  me-select-entry: "";
+  me-accept-entry: "MousePrimary";
+}
+
 @import "colors.rasi" * {
   border: 0;
   font: "Rubik 10";
   font-weight: 600;
   text-color: @surface-variant;
   placeholder-color: @surface-variant;
+}
+
+window {
+  enabled: true;
+  location: center;
+  anchor: center;
+  padding: 10px;
+  border: 1px;
+  border-radius: 16px;
+  border-color: @secondary;
+  background-color: @surface-variant;
+}
+
+mainbox {
+  spacing: 12px;
+  background-color: @surface-variant;
+}
+
+inputbar {
+  padding: 11px;
+  border-radius: 12px;
+  children: [ prompt, entry];
+  background-color: @primary;
+}
+prompt {
+  font: "JetBrains Nerd NFP 14";
+  background-color: transparent;
+  padding: 0 4px 2px 4px;
+  vertical-align: 0.5;
+  color: @surface-variant;
+}
+entry {
+  expand: true;
+  cursor: text;
+  font: "Rubik 11";
+  border-radius: 8px;
+  vertical-align: 0.5;
+  background-color: @primary;
+  background-color: transparent;
+}
+
+listview {
+  enabled: true;
+  cycle: true;
+  dynamic: true;
+  scrollbar: false;
+  fixed-height: true;
+  fixed-columns: true;
+  spacing: 6px;
+  background-color: @surface-variant;
+}
+
+element {
+  enabled: true;
+  background-color: transparent;
+}
+element-icon {
+  cursor: pointer;
+  background-color: transparent;
+}
+element-text {
+  color: #fff;
+  vertical-align: 0.5;
+  cursor: pointer;
+  background-color: transparent;
+}
+
+element-text selected,
+element selected {
+  color: @surface-variant;
+  background-color: @secondary;
+}
+element selected.active {
+  background-color: @surface;
 }

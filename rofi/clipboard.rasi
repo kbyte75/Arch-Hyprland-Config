@@ -1,20 +1,8 @@
 configuration {
   modi: "drun";
   show-icons: false;
-  hover-select: true;
-  me-select-entry: "";
-  me-accept-entry: "MousePrimary";
-  /* //  me-accept-entry: "MouseSecondary"; */
 }
-@import "config.rasi"
-  /* @import "~/.config/rofi/colors.rasi" * {
-  border: 0;
-  font: "Rubik 12";
-  font-weight: 200;
-  text-color: @surface-variant;
-  placeholder-color: @surface-variant;
-} */
-  window {
+@import "config.rasi" /*  */ window {
   enabled: true;
   width: 430px;
   border: 1px;
@@ -24,45 +12,13 @@ configuration {
   background-color: @surface-variant;
 }
 
-mainbox {
-  enabled: true;
-  spacing: 10px;
-  background-color: transparent;
-  orientation: vertical;
-  children: [ "inputbar", "listview"];
-}
-inputbar {
-  padding: 12px;
-  border-radius: 12px;
-  children: [ prompt, entry];
-  background-color: @primary;
-}
-prompt {
-  font: "JetBrains Nerd NFP 14";
-  background-color: transparent;
-  padding: 0 4px 2px 4px;
-  vertical-align: 0.5;
-  color: @surface-variant;
-}
-
 entry {
-  font: "Rubik 11";
-  expand: true;
-  vertical-align: 0.5;
-  border-radius: 8px;
-  background-color: @primary;
-  cursor: text;
   placeholder: "Search copied items...";
-  background-color: transparent;
 }
 
 listview {
   lines: 8;
   columns: 1;
-  fixed-height: true;
-  scrollbar: false;
-  spacing: 6px;
-  background-color: @surface-variant;
 }
 
 element {
@@ -70,20 +26,8 @@ element {
   spacing: 0;
   text-color: #cdd6f4;
   border-radius: 10px;
-  background-color: transparent;
-}
-
-element selected {
-  background-color: @secondary;
-}
-element-text selected {
-  color: @surface-variant;
 }
 
 element-text {
-  color: #fff;
   font: "Rubik 12";
-  vertical-align: 0.5;
-  cursor: pointer;
-  background-color: transparent;
 }

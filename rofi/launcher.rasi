@@ -1,103 +1,33 @@
 configuration {
   show-icons: true;
   display-drun: " ";
-  hover-select: true;
-  me-select-entry: "";
-  me-accept-entry: "MousePrimary";
 }
-@import "config.rasi"
-  /* * {
-  border: 0;
-  font: "Rubik 10";
-  font-weight: 200;
-  text-color: @surface-variant;
-  placeholder-color: @surface-variant;
-} */
-  window {
-  enabled: true;
-  width: 670px;
-  location: center;
-  anchor: center;
-  padding: 16px;
-  border: 1px;
-  border-radius: 16px;
-  border-color: @secondary;
-  background-color: @surface-variant;
-}
-
-mainbox {
-  spacing: 16px;
-  children: [ "inputbar", "listview"];
-  background-color: @surface-variant;
-}
-
-inputbar {
-  padding: 12px;
-  border-radius: 12px;
-  children: [ prompt, entry];
-  background-color: @primary;
-}
-prompt {
-  font: "JetBrains Nerd NFP 14";
-  background-color: transparent;
-  padding: 0 4px 2px 4px;
-  vertical-align: 0.5;
-  color: @surface-variant;
-}
-
-entry {
-  font: "Rubik 11";
-  expand: true;
-  vertical-align: 0.5;
-  border-radius: 8px;
-  background-color: @primary;
-  cursor: text;
-  placeholder: "Search applications...";
-  background-color: transparent;
+@import "config.rasi" window {
+  width: 640px;
 }
 
 listview {
   columns: 5;
   lines: 3;
-  cycle: true;
-  dynamic: true;
-  scrollbar: false;
-  fixed-height: true;
-  fixed-columns: true;
-  spacing: 10px;
-  background-color: @surface-variant;
+}
+
+entry {
+  placeholder: "Search applications...";
 }
 
 element {
-  enabled: true;
   spacing: 10px;
   padding: 14px 10px;
   border-radius: 14px;
-  background-color: transparent;
-  cursor: pointer;
   orientation: vertical;
 }
 
-element-text selected,
-element selected {
-  color: @surface-variant;
-  background-color: @secondary;
-}
-element selected.active {
-  background-color: @surface;
-}
-
 element-icon {
-  background-color: transparent;
-  text-color: inherit;
   size: 52px;
-  cursor: pointer;
 }
 element-text {
-  color: #fff;
   vertical-align: 0.5;
   horizontal-align: 0.5;
   text-transform: uppercase;
   font-weight: 800;
-  background-color: transparent;
 }

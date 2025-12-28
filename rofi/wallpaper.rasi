@@ -1,83 +1,32 @@
 configuration {
   show-icons: true;
-  hover-select: true;
-  me-select-entry: "";
-  me-accept-entry: "MousePrimary";
-}
-@import "config.rasi" /*  */ window {
-  enabled: true;
-  max-width: 70%;
-  location: center;
-  anchor: center;
-  padding: 10px;
-  border: 1px;
-  border-radius: 16px;
-  border-color: @secondary;
-  background-color: @surface-variant;
-}
-mainbox {
-  spacing: 10px;
-  background-color: @surface-variant;
-  children: [ "inputbar", "listview"];
 }
 
-inputbar {
-  padding: 12px;
-  border-radius: 12px;
-  children: [ prompt, entry];
-  background-color: @primary;
-}
-prompt {
-  font: "JetBrains Nerd NFP 14";
-  background-color: transparent;
-  padding: 0 4px 2px 4px;
-  vertical-align: 0.5;
-  color: @surface-variant;
+@import "config.rasi" /*  */ window {
+  max-width: 70%;
 }
 
 entry {
-  font: "Rubik 11";
-  expand: true;
-  vertical-align: 0.5;
-  border-radius: 8px;
-  background-color: @primary;
-  cursor: text;
   placeholder: "Search wallpapers...";
-  background-color: transparent;
 }
 
 listview {
   columns: 5;
   lines: 3;
-  cycle: true;
-  dynamic: true;
-  scrollbar: false;
-  fixed-height: true;
-  fixed-columns: true;
-  background-color: @surface-variant;
 }
 
 element {
-  enabled: true;
   padding: 5px 10px;
   border-radius: 12px;
   orientation: vertical;
-  background-color: transparent;
 }
-element-text selected,
-element selected {
-  color: @surface-variant;
-  background-color: @secondary;
-}
+
 element-icon {
   size: 120px;
   border-radius: 12px;
-  background-color: transparent;
 }
 
 element-text {
-  color: @secondary;
+  font: "Rubik 11";
   horizontal-align: 0.5;
-  padding: 5px 0 0 0;
-  background-color: transparent;
 }

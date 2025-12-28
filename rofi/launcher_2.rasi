@@ -1,95 +1,33 @@
 configuration {
   show-icons: true;
   display-drun: " ";
-  hover-select: true;
-  me-select-entry: "";
-  me-accept-entry: "MousePrimary";
 }
+
 @import "config.rasi" /*  */ window {
-  enabled: true;
-  width: 430px;
-  location: center;
-  anchor: center;
-  padding: 10px;
-  border: 1px;
-  border-radius: 16px;
-  border-color: @secondary;
-  background-color: @surface-variant;
-}
-
-mainbox {
-  spacing: 10px;
-  children: [ "inputbar", "listview"];
-  background-color: @surface-variant;
-}
-
-inputbar {
-  padding: 12px;
-  border-radius: 12px;
-  children: [ prompt, entry];
-  background-color: @primary;
-}
-prompt {
-  font: "JetBrains Nerd NFP 14";
-  background-color: transparent;
-  padding: 0 4px 2px 4px;
-  vertical-align: 0.5;
-  color: @surface-variant;
+  width: 450px;
 }
 
 entry {
-  font: "Rubik 11";
-  expand: true;
-  vertical-align: 0.5;
-  border-radius: 8px;
-  background-color: @primary;
-  cursor: text;
   placeholder: "Search applications...";
-  background-color: transparent;
 }
 
 listview {
   columns: 1;
   lines: 8;
-  cycle: true;
-  dynamic: true;
-  scrollbar: false;
-  fixed-height: true;
-  fixed-columns: true;
-  spacing: 6px;
-  background-color: @surface-variant;
 }
 
 element {
-  enabled: true;
   spacing: 10px;
   padding: 8px 12px;
   border-radius: 12px;
-  background-color: transparent;
-  cursor: pointer;
-}
-
-element-text selected,
-element selected {
-  color: @surface-variant;
-  background-color: @secondary;
-}
-element selected.active {
-  background-color: @surface;
 }
 
 element-icon {
-  background-color: transparent;
-  text-color: inherit;
   size: 30px;
-  cursor: pointer;
 }
+
 element-text {
   font: "Rubik 12";
-  color: #fff;
-  vertical-align: 0.5;
-  cursor: pointer;
   text-transform: capitalize;
   font-weight: 800;
-  background-color: transparent;
 }
