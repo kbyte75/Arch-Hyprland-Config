@@ -211,7 +211,7 @@ updating_system() {
 
 install_dependencies() {
 	step "Installing base dependencies"
-	pacman_install base-devel git rsync jq feh eza nano grim slurp shfmt \
+	pacman_install base-devel git rsync jq eog eza nano grim slurp shfmt \
 		nwg-look font-manager imagemagick blueman nm-connection-editor \
 		python-pyquery adw-gtk-theme qt6-base starship \
 		xdg-desktop-portal-hyprland xdg-desktop-portal-gtk

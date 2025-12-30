@@ -5,7 +5,7 @@
 
 ## Preview
 
-_(Add screenshots here later)_
+![Demo](./previews//showcase.gif)
 
 ## Features
 
