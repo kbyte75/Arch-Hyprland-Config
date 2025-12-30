@@ -5,7 +5,7 @@
 
 ## Preview
 
-![Demo](./previews//showcase.gif)
+<img src="./previews/showcase.webp" width="800"/>
 
 ## Features
 
