@@ -6,7 +6,6 @@ gtk-3.0
 gtk-4.0
 Motrix
 mozilla
-mpv
 nautilus
 nwg-look
 obs-studio
@@ -21,6 +20,7 @@ QtProject.conf
 user-dirs*
 ibus*
 quickshell
+kdenliverc
 
 Code - OSS/**
 VSCodium/**
