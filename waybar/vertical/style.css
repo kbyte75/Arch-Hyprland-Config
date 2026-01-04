@@ -11,20 +11,14 @@
   color: #f2efdf;
 }
 
-window#waybar {
+#waybar {
   border-radius: 8px;
-  background-color: @surface-variant;
-  border: 1px solid @outline;
+  background-color: @surface;
+  border: 1px solid transparent;
 }
 
-window#waybar.hidden {
+#waybar.hidden {
   opacity: 0.5;
-}
-
-window#waybar.empty,
-window#waybar.empty #window {
-  border: 0px;
-  background-color: transparent;
 }
 
 #custom-space {
@@ -34,12 +28,16 @@ window#waybar.empty #window {
 }
 
 #custom-logo {
+  padding: 1px 6px;
+  padding-left: 0;
+  margin: 0 4px;
   margin-top: 4px;
-  font-size: 22px;
+  font-size: 20px;
+  color: @surface;
+  border-radius: 8px;
+  background-color: @secondary;
 }
-#custom-title {
-  font-family: "Raleway";
-}
+
 #custom-screenshot {
   font-size: 18px;
 }
@@ -51,28 +49,32 @@ window#waybar.empty #window {
   font-size: 14px;
   margin-top: 8px;
   font-weight: 800;
-  /* font-family: "Montserrat"; */
+}
+#workspaces {
+  margin: 0 2px;
+  padding: 4px 0;
+  border-radius: 8px;
+  background-color: @secondary;
 }
 #workspaces button {
-  margin: 2px 5px;
+  margin: 2px 4px;
   min-width: 24px;
-  border-radius: 4px;
-  transition: all 0.3s cubic-bezier(0.55, -0.68, 0.48, 1);
+  border-radius: 8px;
   background-color: @outline;
+  transition: all 0.3s cubic-bezier(0.55, -0.68, 0.48, 1);
 }
 #workspaces button.active {
   min-height: 42px;
-  background-color: @primary;
+  background-color: @surface;
 }
 
 #bluetooth,
 #network,
 #custom-power {
-  margin: 0 4px;
-  min-width: 16px;
-  padding: 0 4px;
-  border-radius: 0px;
-  background-color: @light_bg;
+  color: @surface;
+  margin: 0 2px;
+  padding-right: 6px;
+  background-color: @primary;
 }
 #bluetooth {
   padding: 0 6px;
@@ -81,7 +83,11 @@ window#waybar.empty #window {
   border-top-left-radius: 4px;
   border-top-right-radius: 4px;
 }
+#network {
+  font-size: 13px;
+}
 #custom-power {
+  padding-right: 4px;
   margin-bottom: 5px;
   padding-bottom: 2px;
   border-bottom-left-radius: 5px;

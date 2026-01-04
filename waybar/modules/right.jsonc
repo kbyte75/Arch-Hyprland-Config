@@ -30,8 +30,17 @@
   },
 
   "clock": {
-    "tooltip": false,
-    "format": "{:%I:%M}"
+    "format": "{:%I:%M}",
+    "tooltip-format": "<span font_desc='JetBrains Mono 10'>{calendar}</span>",
+    "calendar": {
+      "mode": "month",
+      "format": {
+        "months": "<span font_desc='Poppins 10' weight='bold'>         {}</span>",
+        "weeks": "<span font_desc='JetBrains Mono 9' alpha='50%'>{}</span>",
+        "days": "<span>{}</span>",
+        "today": "<span weight='bold' background='#2a2f4a' foreground='#ffffff'>{}</span>"
+      }
+    }
   },
 
   "clock#day": {

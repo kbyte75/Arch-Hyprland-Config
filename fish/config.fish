@@ -23,7 +23,7 @@ set -Ux NO_AT_BRIDGE 1
 # Optimize makepkg for 4 CPU cores
 set -Ux MAKEFLAGS "-j4"
 
-# Aliases & abbreviations
+#--- Aliases & abbreviations---
 abbr -a ls 'eza --icons --group-directories-first'
 abbr -a motrix '~/Desktop/motrix/motrix'
 abbr -a wsstop 'waydroid session stop'
@@ -50,6 +50,7 @@ abbr -a ga 'git add .'
 abbr -a gc 'git commit -m'
 abbr -a gp 'git push'
 abbr -a gl 'git log --oneline --graph --decorate'
+abbr -a close '$HOME/.config/hypr/scripts/close_ws.sh'
 
 # Optional: unlock pacman database (use only when needed)
 # abbr -a unlock 'sudo rm /var/lib/pacman/db.lck'
