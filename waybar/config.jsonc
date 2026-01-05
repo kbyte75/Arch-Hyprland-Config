@@ -64,11 +64,10 @@
 
   "custom/weather": {
     "escape": true,
-    "interval": 300,
-    "tooltip": true,
+    "interval": "once",
+    "tooltip": false,
     "format": "   {text}C",
     "return-type": "json",
-    "tooltip-format": "Weather",
     "exec": "python3 ~/.config/waybar/scripts/weather.py"
   },
 

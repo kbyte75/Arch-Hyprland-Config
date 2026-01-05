@@ -77,7 +77,6 @@ tooltip {
 }
 
 tooltip label {
-  font-family: "Poppins";
   font-size: 14px;
   font-weight: 400;
   color: @background;
@@ -97,10 +96,10 @@ tooltip label {
   font-weight: 600;
 }
 #disk {
-  margin-right: 12px;
+  margin-right: 16px;
 }
 #memory {
-  margin: 0 12px;
+  margin: 0 16px;
 }
 
 #temperature.critical,
@@ -121,13 +120,17 @@ tooltip label {
 /* cubic-bezier(0.55, -0.68, 0.48, 1.682) */
 #workspaces button {
   margin: 9px 2px;
-  padding: 0 5px;
-  border-radius: 6px;
+  padding: 0 4px;
+  border-radius: 8px;
   transition: all 0.3s cubic-bezier(0.55, -0.68, 0.48, 1);
   background-color: @outline;
 }
+#workspaces button:hover {
+  border-radius: 6px;
+}
 #workspaces button.active {
-  padding: 0 14px;
+  padding: 0 12px;
+  border-radius: 6px;
   background-color: @primary;
 }
 
@@ -140,7 +143,7 @@ tooltip label {
 }
 
 #custom-weather {
-  margin-left: 12px;
+  margin-left: 14px;
 }
 
 #custom-screenshot {

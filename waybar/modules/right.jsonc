@@ -20,17 +20,9 @@
   },
 
   // DAY & TIME
-  "group/clock": {
-    "orientation": "inherit",
-    "drawer": {
-      "transition-duration": 500,
-      "transition-left-to-right": false
-    },
-    "modules": ["clock", "clock#day"]
-  },
 
   "clock": {
-    "format": "{:%I:%M}",
+    "format": "  {:%I:%M}",
     "tooltip-format": "<span font_desc='JetBrains Mono 10'>{calendar}</span>",
     "calendar": {
       "mode": "month",
@@ -41,11 +33,6 @@
         "today": "<span weight='bold' background='#2a2f4a' foreground='#ffffff'>{}</span>"
       }
     }
-  },
-
-  "clock#day": {
-    "tooltip": false,
-    "format": "{:%A}"
   },
 
   // BLUETOOTH ICON AND CONNECTED DEVICE
@@ -121,7 +108,6 @@
     "tooltip-format-ethernet": "",
     "format-disconnected": "󰤭 ", //An empty format will hide the module.
     "tooltip-format-disconnected": "Disconnected",
-    "max-length": 60,
     "tooltip": true,
     "on-click": "$HOME/.config/waybar/scripts/connection.sh wifi",
     "on-scroll-up": "$HOME/.config/waybar/scripts/volume.sh up",

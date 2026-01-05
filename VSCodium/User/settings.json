@@ -31,7 +31,7 @@
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.smoothScrolling": true,
   // font
-  "editor.fontFamily": "Geist Mono, JetBrains Mono",
+  "editor.fontFamily": "Geist Mono, JetBrainsMono Nerd Font",
   "editor.fontWeight": "normal",
   "editor.fontLigatures": true,
   "editor.lineHeight": 1.7,
