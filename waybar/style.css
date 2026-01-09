@@ -104,12 +104,14 @@ tooltip label {
 
 #temperature.critical,
 #memory.critical,
+#disk.critical,
 #cpu.critical {
   color: #c40404;
 }
 
 #temperature.warning,
 #memory.warning,
+#disk.warning,
 #cpu.warning {
   color: #cad806;
 }

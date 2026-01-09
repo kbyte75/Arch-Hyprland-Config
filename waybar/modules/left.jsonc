@@ -10,10 +10,15 @@
   },
 
   "disk": {
-    "interval": 30,
-    "format": "󰝰  {specific_free:0.0f} GB",
     "path": "/",
-    "unit": "GB"
+    "interval": 30,
+    "states": {
+      "warning": 60,
+      "critical": 80
+    },
+    "format": "󰝰  {percentage_free}%",
+    "tooltip-format": "{free} / {total}"
+    // "unit": "GB"
   },
 
   "custom/space": {

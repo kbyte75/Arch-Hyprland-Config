@@ -1,7 +1,11 @@
 # kbyte75's Arch-Hyprland Dotfiles
 
+![Arch Linux](https://img.shields.io/badge/Arch_Linux-blue?logo=archlinux&logoColor=white)
 ![Hyprland](https://img.shields.io/badge/Hyprland-2025-blue?style=flat&logo=hyprland&logoColor=white)
-![Arch Linux](https://img.shields.io/badge/Arch_Linux-1793D1?logo=archlinux&logoColor=white)
+![Waybar](https://img.shields.io/badge/Waybar-cyan?logo=weblate&logoColor=white)
+![Dunst](https://img.shields.io/badge/Dunst-grey?logo=d-edge&logoColor=white)
+![Rofi](https://img.shields.io/badge/Rofi-teal?logo=bentobox&logoColor=white)
+![Kitty](https://img.shields.io/badge/Kitty-grey?logo=icinga&logoColor=white)
 
 ## Preview
 
@@ -150,3 +154,6 @@ After reboot:
 Your new Hyprland setup is ready. Welcome to the rice side.
 
 Made with ❤️ by **[KBYTE75](https://github.com/kbyte75)**
+
+<!-- COC NAME BASE LAYOUT -->
+<!-- https://link.clashofclans.com/en?action=OpenLayout&id=TH14%3AHV%3AAAAAEQAAAAK__ZSkE1wWRMa-MaZ5pN8O -->
