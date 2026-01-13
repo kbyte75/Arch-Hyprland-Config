@@ -157,3 +157,5 @@ Made with ❤️ by **[KBYTE75](https://github.com/kbyte75)**
 
 <!-- COC NAME BASE LAYOUT -->
 <!-- https://link.clashofclans.com/en?action=OpenLayout&id=TH14%3AHV%3AAAAAEQAAAAK__ZSkE1wWRMa-MaZ5pN8O -->
+<!-- Capital Peak  -->
+<!-- https://link.clashofclans.com/en?action=OpenLayout&id=TH7%3ACC%3A0%3AAAAAJAAAAAKgKJKXJSzdRDnkbqFwhY-7 -->

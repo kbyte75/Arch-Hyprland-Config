@@ -53,4 +53,4 @@ abbr -a gl 'git log --oneline --graph --decorate'
 abbr -a close '$HOME/.config/hypr/scripts/close_ws.sh'
 
 # Optional: unlock pacman database (use only when needed)
-# abbr -a unlock 'sudo rm /var/lib/pacman/db.lck'
+abbr -a unlockdb 'sudo rm /var/lib/pacman/db.lck'
