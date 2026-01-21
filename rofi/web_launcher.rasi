@@ -1,0 +1,30 @@
+configuration {
+  show-icons: true;
+  /* display-drun: " "; */
+}
+
+@import "config.rasi" /*  */ window {
+  width: 420px;
+  /* max-height: 400px; */
+}
+
+entry {
+  placeholder: "Go to...";
+}
+
+listview {
+  columns: 2;
+  lines: 6;
+}
+
+element {
+  spacing: 10px;
+  padding: 10px 0;
+  border-radius: 12px;
+}
+
+element-text {
+  font: "Rubik 13";
+  text-transform: capitalize;
+  font-weight: 800;
+}
