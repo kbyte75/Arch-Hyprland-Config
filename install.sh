@@ -219,7 +219,7 @@ install_dependencies() {
 
 install_main_packages() {
 	step "Installing main packages"
-	pacman_install waybar swww rofi hyprlock hypridle matugen fish \
+	pacman_install waybar swww rofi conky hyprlock hypridle matugen fish \
 		fastfetch kitty nautilus cliphist wl-clipboard mpv
 }
 

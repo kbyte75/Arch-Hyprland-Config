@@ -69,7 +69,7 @@ After reboot:
 <table width="100%" style="border-collapse:collapse;font-family:sans-serif;">
   <tbody>
     <tr>
-      <td style="padding:8px;border:1px solid rgba(255,255,255,.1);width:25%;">SUPER + RETURN</td>
+      <td style="padding:8px;border:1px solid rgba(255,255,255,.1);width:25%;"> + RETURN</td>
       <td style="padding:8px;border:1px solid rgba(255,255,255,.1);width:25%;">OPEN TERMINAL (KITTY)</td>
       <td style="padding:8px;border:1px solid rgba(255,255,255,.1);width:25%;">SUPER + SHIFT + F</td>
       <td style="padding:8px;border:1px solid rgba(255,255,255,.1);width:25%;">TOGGLE FULLSCREEN</td>
@@ -88,7 +88,7 @@ After reboot:
     </tr>
     <tr>
       <td style="padding:8px;border:1px solid rgba(255,255,255,.1);">SUPER + R</td>
-      <td style="padding:8px;border:1px solid rgba(255,255,255,.1);">LAUNCH ROFI LAUNCHER</td>
+      <td style="padding:8px;border:1px solid rgba(255,255,255,.1);">LAUNCH APP LAUNCHER</td>
       <td style="padding:8px;border:1px solid rgba(255,255,255,.1);">PRINT</td>
       <td style="padding:8px;border:1px solid rgba(255,255,255,.1);">FULL SCREENSHOT</td>
     </tr>
@@ -96,7 +96,7 @@ After reboot:
       <td style="padding:8px;border:1px solid rgba(255,255,255,.1);">SUPER + B</td>
       <td style="padding:8px;border:1px solid rgba(255,255,255,.1);">OPEN FIREFOX</td>
       <td style="padding:8px;border:1px solid rgba(255,255,255,.1);">SUPER + T</td>
-      <td style="padding:8px;border:1px solid rgba(255,255,255,.1);">SWITCH WALLPAPER</td>
+      <td style="padding:8px;border:1px solid rgba(255,255,255,.1);">SWITCH WALLPAPER (RANDOM)</td>
     </tr>
     <tr>
       <td style="padding:8px;border:1px solid rgba(255,255,255,.1);">SUPER + C</td>
@@ -118,27 +118,27 @@ After reboot:
     </tr>
     <tr>
       <td style="padding:8px;border:1px solid rgba(255,255,255,.1);">SUPER + .</td>
-      <td style="padding:8px;border:1px solid rgba(255,255,255,.1);">OPEN EMOJI PICKER</td>
+      <td style="padding:8px;border:1px solid rgba(255,255,255,.1);">TOGGLE EMOJI PICKER</td>
       <td style="padding:8px;border:1px solid rgba(255,255,255,.1);">SUPER + LMB DRAG</td>
       <td style="padding:8px;border:1px solid rgba(255,255,255,.1);">MOVE WINDOW</td>
     </tr>
     <tr>
-      <td style="padding:8px;border:1px solid rgba(255,255,255,.1);">SUPER + MOUSE UP</td>
+      <td style="padding:8px;border:1px solid rgba(255,255,255,.1);">SUPER + MOUSE UP / SUPER + LEFT ARROW</td>
       <td style="padding:8px;border:1px solid rgba(255,255,255,.1);">PREVIOUS WORKSPACE</td>
       <td style="padding:8px;border:1px solid rgba(255,255,255,.1);">SUPER + RMB DRAG</td>
       <td style="padding:8px;border:1px solid rgba(255,255,255,.1);">RESIZE WINDOW</td>
     </tr>
     <tr>
-      <td style="padding:8px;border:1px solid rgba(255,255,255,.1);">SUPER + MOUSE DOWN</td>
+      <td style="padding:8px;border:1px solid rgba(255,255,255,.1);">SUPER + MOUSE DOWN / SUPER + RIFHT ARROW</td>
       <td style="padding:8px;border:1px solid rgba(255,255,255,.1);">NEXT WORKSPACE</td>
-      <td style="padding:8px;border:1px solid rgba(255,255,255,.1);">ALT + MOUSE UP</td>
+      <td style="padding:8px;border:1px solid rgba(255,255,255,.1);">ALT + MOUSE UP / ALT + LEFT ARROW</td>
       <td style="padding:8px;border:1px solid rgba(255,255,255,.1);">MOVE WINDOW TO PREVIOUS WORKSPACE</td>
     </tr>
     <tr>
-      <td style="padding:8px;border:1px solid rgba(255,255,255,.1);"></td>
-      <td style="padding:8px;border:1px solid rgba(255,255,255,.1);">ALT + MOUSE DOWN</td>
+      <td style="padding:8px;border:1px solid rgba(255,255,255,.1);">ALT + MOUSE DOWN / ALT + RIGHT ARROW</td>
       <td style="padding:8px;border:1px solid rgba(255,255,255,.1);">MOVE WINDOW TO NEXT WORKSPACE</td>
-      <td style="padding:8px;border:1px solid rgba(255,255,255,.1);"></td>
+      <td style="padding:8px;border:1px solid rgba(255,255,255,.1);">SUPER + SHIFT + W</td>
+      <td style="padding:8px;border:1px solid rgba(255,255,255,.1);">TOGGLE WALLPAPER SELECTOR</td>
     </tr>
   </tbody>
 </table>
