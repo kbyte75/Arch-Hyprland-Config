@@ -18,7 +18,12 @@
     "spacing": 10,
     "show-passive-items": true,
   },
-
+  "custom/clipboard": {
+    "format": "󱉫 ",
+    "tooltip": false,
+    "on-click": "~/.config/hypr/scripts/rofi.sh clipboard",
+  },
+  // 󱉫
   // DAY & TIME
 
   "clock": {

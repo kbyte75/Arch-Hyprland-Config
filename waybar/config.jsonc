@@ -3,7 +3,7 @@
   "include": [
     "$HOME/.config/waybar/modules/left.jsonc",
     "$HOME/.config/waybar/modules/middle.jsonc",
-    "$HOME/.config/waybar/modules/right.jsonc"
+    "$HOME/.config/waybar/modules/right.jsonc",
   ],
   "layer": "top",
   "reload_style_on_change": true,
@@ -22,18 +22,19 @@
     "group/stats",
     "cpu",
     "memory",
-    "temperature"
+    "temperature",
   ],
   "modules-center": ["hyprland/workspaces"],
   "modules-right": [
-    "clock",
+    // "clock",
     "custom/weather",
     "custom/screenshot",
+    // "custom/clipboard",
     "group/tray",
     "group/bluetooth-modules",
     // "group/network-modules",
     "network",
-    "group/power-menu"
+    "group/power-menu",
   ],
   // ========================================  CUSTOM MODULES ========================================
   "custom/logo": {
@@ -41,7 +42,7 @@
     "tooltip": false,
     "on-click": "~/.config/hypr/scripts/rofi.sh launcher",
     "on-scroll-up": "~/.config/waybar/scripts/brightness.sh up",
-    "on-scroll-down": "~/.config/waybar/scripts/brightness.sh down"
+    "on-scroll-down": "~/.config/waybar/scripts/brightness.sh down",
   },
 
   // SHOWS THE APP TITLE IN UPPERCASE
@@ -52,13 +53,13 @@
     "return-type": "text",
     "exec": "~/.config/waybar/scripts/window.sh",
     "on-scroll-up": "~/.config/waybar/scripts/brightness.sh up",
-    "on-scroll-down": "~/.config/waybar/scripts/brightness.sh down"
+    "on-scroll-down": "~/.config/waybar/scripts/brightness.sh down",
   },
   "custom/space": {
     "format": " ",
     "tooltip": false,
     "on-scroll-up": "~/.config/waybar/scripts/volume.sh up",
-    "on-scroll-down": "~/.config/waybar/scripts/volume.sh down"
+    "on-scroll-down": "~/.config/waybar/scripts/volume.sh down",
   },
 
   "custom/weather": {
@@ -67,13 +68,13 @@
     "tooltip": false,
     "format": "   {text}C",
     "return-type": "json",
-    "exec": "python3 ~/.config/waybar/scripts/weather.py"
+    "exec": "python3 ~/.config/waybar/scripts/weather.py",
   },
 
   "custom/screenshot": {
     "tooltip": true,
     "format": "󱣴",
     "tooltip-format": "Screenshot",
-    "on-click": "~/.config/hypr/scripts/screenshot.sh region"
-  }
+    "on-click": "~/.config/hypr/scripts/screenshot.sh region",
+  },
 }

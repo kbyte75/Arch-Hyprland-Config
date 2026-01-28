@@ -117,22 +117,25 @@ tooltip label {
 }
 /* =============================== MIDDLE SECTION =============================== */
 #workspaces {
-  padding: 0 40px;
+  padding: 4px;
+  margin: 5px 0;
+  border-radius: 8px;
+  background-color: alpha(@outline, 0.5);
 }
 /* cubic-bezier(0.55, -0.68, 0.48, 1.682) */
 #workspaces button {
-  margin: 9px 2px;
+  margin: 0 3px;
   padding: 0 4px;
-  border-radius: 8px;
+  border-radius: 6px;
   transition: all 0.3s cubic-bezier(0.55, -0.68, 0.48, 1);
   background-color: @outline;
 }
 #workspaces button:hover {
-  border-radius: 6px;
+  /* border-radius: 6px; */
 }
 #workspaces button.active {
   padding: 0 12px;
-  border-radius: 6px;
+  /* border-radius: 8px; */
   background-color: @primary;
 }
 

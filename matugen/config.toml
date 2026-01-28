@@ -28,7 +28,7 @@ output_path = '~/.config/rofi/colors.rasi'
 [templates.conky]
 input_path = '~/.config/matugen/templates/conky.conf'
 output_path = '~/.config/conky/theme.config'
-post_hook = 'pkill conky | conky -c ~/.config/conky/theme.config'
+# post_hook = 'pkill -SIGUSR1 conky | conky -c ~/.config/conky/theme.config'
 
 [templates.dunst]
 input_path = '~/.config/matugen/templates/dunstrc-colors'

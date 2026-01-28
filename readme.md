@@ -69,7 +69,7 @@ After reboot:
 <table width="100%" style="border-collapse:collapse;font-family:sans-serif;">
   <tbody>
     <tr>
-      <td style="padding:8px;border:1px solid rgba(255,255,255,.1);width:25%;"> + RETURN</td>
+      <td style="padding:8px;border:1px solid rgba(255,255,255,.1);width:25%;">SUPER + RETURN</td>
       <td style="padding:8px;border:1px solid rgba(255,255,255,.1);width:25%;">OPEN TERMINAL (KITTY)</td>
       <td style="padding:8px;border:1px solid rgba(255,255,255,.1);width:25%;">SUPER + SHIFT + F</td>
       <td style="padding:8px;border:1px solid rgba(255,255,255,.1);width:25%;">TOGGLE FULLSCREEN</td>

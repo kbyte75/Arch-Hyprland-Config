@@ -8,10 +8,10 @@
       "format": "{icon}",
       "icon-theme": "MacTahoe-green",
       "update-active-window": false,
-      "ignore-list": ["kitty", "dev.musagy.hypremoji"]
+      "ignore-list": ["kitty", "dev.musagy.hypremoji"],
     },
     "persistent-workspaces": { "*": 5 },
     "on-scroll-up": "hyprctl dispatch workspace -1",
-    "on-scroll-down": "hyprctl dispatch workspace +1"
-  }
+    "on-scroll-down": "hyprctl dispatch workspace +1",
+  },
 }
