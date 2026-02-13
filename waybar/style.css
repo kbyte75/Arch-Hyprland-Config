@@ -46,6 +46,8 @@
 #custom-logout,
 #custom-title,
 #network.disconnected,
+#custom-picker:hover,
+#custom-clipboard:hover,
 #custom-screenshot:hover {
   background-color: alpha(@secondary, 0.3);
 }
@@ -118,7 +120,7 @@ tooltip label {
 /* =============================== MIDDLE SECTION =============================== */
 #workspaces {
   padding: 4px;
-  margin: 5px 0;
+  margin: 5px 20px;
   border-radius: 8px;
   background-color: alpha(@outline, 0.5);
 }
@@ -151,15 +153,25 @@ tooltip label {
   margin-left: 14px;
 }
 
+#custom-picker,
+#custom-clipboard,
 #custom-screenshot {
   font-size: 18px;
-  margin: 8px;
+  margin: 8px 0;
   margin-right: 0;
   padding: 0 10px 0 6px;
   border-radius: 5px;
   transition: all 0.3s ease-in-out;
 }
-
+#custom-clipboard,
+#custom-picker {
+  margin: 8px 6px;
+  font-size: 14px;
+  padding: 0 4px 0 9px;
+}
+#custom-screenshot {
+  margin-left: 8px;
+}
 #network {
   min-width: 16px;
   border-radius: 0px;

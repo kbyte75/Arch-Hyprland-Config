@@ -28,6 +28,7 @@
   "modules-right": [
     // "clock",
     "custom/weather",
+    // "custom/picker",
     "custom/screenshot",
     // "custom/clipboard",
     "group/tray",

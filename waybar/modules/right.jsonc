@@ -23,6 +23,11 @@
     "tooltip": false,
     "on-click": "~/.config/hypr/scripts/rofi.sh clipboard",
   },
+  "custom/picker": {
+    "format": " ",
+    "tooltip": false,
+    "on-click": "hyprpicker",
+  },
   // 󱉫
   // DAY & TIME
 
@@ -62,7 +67,7 @@
     "on-scroll-up": "$HOME/.config/waybar/scripts/volume.sh up",
     "on-scroll-down": "$HOME/.config/waybar/scripts/volume.sh down",
     "on-click-left": "rfkill unblock bluetooth",
-    "on-click-right": "rfkill block bluetooth",
+    "on-click-right": "bash -c 'rfkill list bluetooth | grep -q \"Soft blocked: yes\" && rfkill unblock bluetooth || rfkill block bluetooth'",
   },
 
   "bluetooth#device": {
@@ -73,7 +78,7 @@
     "on-click": "$HOME/.config/waybar/scripts/connection.sh bluetooth",
     "on-scroll-up": "$HOME/.config/waybar/scripts/volume.sh up",
     "on-scroll-down": "$HOME/.config/waybar/scripts/volume.sh down",
-    "on-click-right": "rfkill block bluetooth",
+    "on-click-right": "bash -c 'rfkill list bluetooth | grep -q \"Soft blocked: yes\" && rfkill unblock bluetooth || rfkill block bluetooth'",
   },
 
   // WIFI ICON & SPEED
