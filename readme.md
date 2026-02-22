@@ -76,7 +76,7 @@ git clone https://github.com/kbyte75/Arch-Hyprland-Config.git && cd Arch-Hyprlan
  ```bash
  yay -S vscodium-bin --needed --noconfirm
  ```
- 7. `Clone config files (important)`
+ 7. Clone config files (important)
  ```bash
  cp -a ~/.config ~/.config.bak
  git clone https://github.com/kbyte75/Arch-Hyprland-Config.git
@@ -113,7 +113,7 @@ git clone https://github.com/kbyte75/Arch-Hyprland-Config.git && cd Arch-Hyprlan
 - [MacTahoe Icon Theme](https://www.gnome-look.org/p/2299216)
 - [Rubik](https://fonts.google.com/selection?query=rubik)
 - [Poppins](https://fonts.google.com/selection?query=poppins)
-- [Poppins](https://fonts.google.com/specimen/Geist+Mono)
+- [Geist Mono](https://fonts.google.com/specimen/Geist+Mono)
 - [A Black Lives](https://www.dafont.com/a-black-lives.font)
 - [Voice In My Head](https://www.dafont.com/voice-in-my-head.font)
 - [FiraCode Nerd Font](https://github.com/ryanoasis/nerd-fonts/releases/download/v3.4.0/FiraCode.zip)
