@@ -31,7 +31,7 @@
 - Fresh Arch Linux installation (with internet)
 - Root privileges (sudo)
 
-## One-Command Installation (recommended)
+<!-- ## One-Command Installation (recommended)
 
 ```bash
 curl -fsSL https://raw.githubusercontent.com/kbyte75/Arch-Hyprland-Config/main/install.sh | bash
@@ -41,11 +41,71 @@ curl -fsSL https://raw.githubusercontent.com/kbyte75/Arch-Hyprland-Config/main/i
 
 ```bash
 git clone https://github.com/kbyte75/Arch-Hyprland-Config.git && cd Arch-Hyprland-Config && bash install.sh
-```
+``` -->
 
-## Post-Installation Steps (Required)
+## INSTALLATION
 
-After reboot:
+ 1. Update the system
+ ```bash
+ sudo pacman -Syu
+ ```
+
+ 2. Install this dependencies
+ ```bash
+ sudo pacman -S --needed --noconfirm base-devel git rsync jq eog eza nano grim slurp shfmt imagemagick blueman nm-connection-editor python-pyquery adw-gtk-theme qt6-base starship xdg-desktop-portal-hyprland xdg-desktop-portal-gtk
+ ```
+ 3. Install this packages
+ ```bash
+ sudo pacman -S --needed --noconfirm waybar swww rofi conky hyprlock hypridle matugen fish fastfetch kitty nautilus cliphist wl-clipboard mpv nwg-look font-manager
+ ```
+ 3. Setup YAY package manager
+ ```bash
+ git clone https://aur.archlinux.org/yay.git
+ cd yay
+ makepkg -si --noconfirm
+ ```
+ 4. Change default shell to `fish` (optional)
+ ```bash
+ command -v fish &>/dev/null && sudo chsh -s /usr/bin/fish "$USER"
+ ```
+ 5. Install emoji keyboard (optional)
+ ```bash
+ yay -S hypremoji --needed --noconfirm
+ ```
+ 6. Install vscodium - code editor (optional) `*it's gonna take too much time`
+ ```bash
+ yay -S vscodium-bin --needed --noconfirm
+ ```
+ 7. `Clone config files (important)`
+ ```bash
+ cp -a ~/.config ~/.config.bak
+ git clone https://github.com/kbyte75/Arch-Hyprland-Config.git
+ cd Arch-Hyprland-Config
+ cp -a .config ~/
+ ```
+  8. Set permissions 
+ ```bash
+ sudo chmod +x ~/.config/hypr/scripts/*.sh 2>/dev/null || true
+ sudo chmod +x ~/.config/waybar/scripts/*.{sh,py} 2>/dev/null || true
+ ```
+  9. Download wallpapers (Optional)
+ ```bash
+ mkdir -p "$HOME/Pictures/Wallpapers"
+ git clone https://github.com/kbyte75/wallpapers.git
+ cd wallpapers
+ mv * "$HOME/Pictures/Wallpapers"
+ ```
+  10. Other tweaks (Optional)
+ ```bash
+ cd Arch-Hyprland-Config
+ sudo rsync -a nanorc /etc
+ sudo sed -i.bak 's/^timeout .*/timeout 1/' /boot/loader/loader.conf
+#  sudo gsettings set org.gnome.desktop.interface gtk-theme 'adw-gtk3-dark' || true
+ ```
+
+
+
+## After Reboot
 
 ### 1. Download Fonts, Themes, Cursor, Icon:
 
