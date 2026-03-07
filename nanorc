@@ -1,0 +1,34 @@
+# Enable syntax highlighting
+include "/usr/share/nano/*.nanorc"
+
+set softwrap
+set tabsize 4
+set tabstospaces
+set autoindent
+set mouse
+set nohelp
+set breaklonglines
+set emptyline # add an empty line below title bar
+set historylog
+set locking
+set magic
+set linenumbers
+set matchbrackets "(){}[]"
+set punct ".,!?;:"
+#set minibar
+
+# KEYBINDS
+# bind ^V "xclip -o | nano -B - | nano -B -" main  # Paste from clipboard
+bind ^F whereis main   #  search
+bind ^H replace main   #  replace
+bind ^Z undo main      #  undo
+bind ^Y redo main      #  redo
+bind ^X cancel replace #  cancel replace
+# bind ^C "xclip -selection clipboard" main
+
+# Set color scheme for syntax highlighting (example for light background)
+set titlecolor black,green
+set statuscolor black,cyan
+set errorcolor white,red
+set selectedcolor white,grey
+set numbercolor yellow

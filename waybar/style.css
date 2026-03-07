@@ -1,0 +1,230 @@
+@import "colors.css";
+
+* {
+  margin: 0;
+  font-family: "Poppins", "JetBrainsMono NFP";
+  font-weight: 400;
+  border: none;
+  color: #f2efdf;
+}
+
+#waybar {
+  border-radius: 8px;
+  background-color: @surface-variant;
+  border: 1px solid @outline;
+}
+
+#waybar.hidden {
+  opacity: 0.5;
+}
+
+#waybar.empty,
+#waybar.empty #window {
+  padding: 0px;
+  border: 0px;
+  background-color: transparent;
+}
+
+#bluetooth,
+#custom-logo {
+  border-top-left-radius: 6px;
+  border-bottom-left-radius: 6px;
+}
+#power-menu,
+#custom-title,
+#custom-power {
+  border-top-right-radius: 6px;
+  border-bottom-right-radius: 6px;
+}
+
+#custom-logo,
+#custom-separator,
+#network,
+#bluetooth,
+#custom-power,
+#custom-reboot,
+#custom-logout,
+#custom-title,
+#network.disconnected,
+#custom-picker:hover,
+#custom-clipboard:hover,
+#custom-screenshot:hover {
+  background-color: alpha(@secondary, 0.3);
+}
+
+#custom-separator,
+#network,
+#custom-title,
+#custom-logo,
+#power-menu,
+#bluetooth {
+  margin: 5px 0;
+}
+
+#custom-logo,
+#custom-power {
+  color: @primary;
+}
+
+#custom-space {
+  min-width: 70px;
+  padding: 10px 0;
+  background-color: transparent;
+}
+
+tooltip {
+  border-radius: 6px;
+  background-color: @secondary;
+  border: 1px solid @outline;
+}
+
+tooltip label {
+  font-size: 14px;
+  font-weight: 400;
+  color: @background;
+}
+/* =============================== LEFT SECTION =============================== */
+
+#custom-logo {
+  font-size: 20px;
+  padding-left: 6px;
+  /* padding-right: 4px; */
+  margin-left: 5px;
+}
+
+#custom-title {
+  font-size: 15px;
+  padding-right: 8px;
+  font-weight: 600;
+}
+#disk {
+  margin-right: 16px;
+}
+#memory {
+  margin: 0 16px;
+}
+
+#temperature.critical,
+#memory.critical,
+#disk.critical,
+#cpu.critical {
+  color: #c40404;
+}
+
+#temperature.warning,
+#memory.warning,
+#disk.warning,
+#cpu.warning {
+  color: #cad806;
+}
+/* =============================== MIDDLE SECTION =============================== */
+#workspaces {
+  padding: 4px;
+  margin: 5px 20px;
+  border-radius: 8px;
+  background-color: alpha(@outline, 0.5);
+}
+/* cubic-bezier(0.55, -0.68, 0.48, 1.682) */
+#workspaces button {
+  margin: 0 3px;
+  padding: 0 4px;
+  border-radius: 6px;
+  transition: all 0.3s cubic-bezier(0.55, -0.68, 0.48, 1);
+  background-color: @outline;
+}
+#workspaces button:hover {
+  /* border-radius: 6px; */
+}
+#workspaces button.active {
+  padding: 0 12px;
+  /* border-radius: 8px; */
+  background-color: @primary;
+}
+
+/* =============================== RIGHT SECTION =============================== */
+#tray {
+  margin-right: 12px;
+}
+#clock.day {
+  margin: 0 10px;
+}
+
+#custom-weather {
+  margin-left: 14px;
+}
+
+#custom-picker,
+#custom-clipboard,
+#custom-screenshot {
+  font-size: 18px;
+  margin: 8px 0;
+  margin-right: 0;
+  padding: 0 6px 0 6px;
+  border-radius: 5px;
+  transition: all 0.3s ease-in-out;
+}
+#custom-clipboard,
+#custom-picker {
+  margin: 8px 6px;
+  font-size: 14px;
+  padding: 0 4px 0 9px;
+}
+#custom-screenshot {
+  margin-left: 8px;
+}
+#network {
+  min-width: 16px;
+  border-radius: 0px;
+  /* padding-right: 2px; */
+}
+
+#bluetooth {
+  font-size: 17px;
+  padding-left: 8px;
+}
+#bluetooth.device {
+  border-radius: 0;
+}
+
+#custom-logout {
+  min-width: 32px;
+  font-size: 16px;
+}
+#custom-reboot {
+  min-width: 32px;
+  font-size: 18px;
+}
+
+#custom-power {
+  font-size: 16px;
+  padding-right: 12px;
+}
+
+#power-menu {
+  margin-right: 5px;
+  border-radius: 6px;
+}
+#power-menu:hover {
+  margin-left: 8px;
+  transition: all 0.3s ease-in-out;
+  background-color: @primary;
+}
+
+#power-menu:hover #custom-power {
+  padding-right: 1px;
+  min-width: 32px;
+}
+#power-menu:hover #custom-reboot,
+#power-menu:hover #custom-logout,
+#power-menu:hover #custom-power {
+  transition: all 0.3s ease-in-out;
+  color: @surface-variant;
+}
+
+#power-menu:hover #custom-reboot:hover,
+#power-menu:hover #custom-logout:hover,
+#power-menu:hover #custom-power:hover {
+  border-radius: 6px;
+  background-color: alpha(@outline, 0.3);
+  /* color: #fff; */
+}

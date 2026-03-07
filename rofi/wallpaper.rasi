@@ -1,0 +1,32 @@
+configuration {
+  show-icons: true;
+}
+
+@import "config.rasi" /*  */ window {
+  max-width: 70%;
+}
+
+entry {
+  placeholder: "Search wallpapers...";
+}
+
+listview {
+  columns: 5;
+  lines: 3;
+}
+
+element {
+  padding: 5px 10px;
+  border-radius: 12px;
+  orientation: vertical;
+}
+
+element-icon {
+  size: 120px;
+  border-radius: 12px;
+}
+
+element-text {
+  font: "Rubik 11";
+  horizontal-align: 0.5;
+}

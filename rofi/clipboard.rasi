@@ -1,0 +1,33 @@
+configuration {
+  modi: "drun";
+  show-icons: false;
+}
+@import "config.rasi" /*  */ window {
+  enabled: true;
+  width: 430px;
+  border: 1px;
+  border-color: @secondary;
+  border-radius: 12px;
+  padding: 10px;
+  background-color: @surface-variant;
+}
+
+entry {
+  placeholder: "Search copied items...";
+}
+
+listview {
+  lines: 8;
+  columns: 1;
+}
+
+element {
+  padding: 12px;
+  spacing: 0;
+  text-color: #cdd6f4;
+  border-radius: 10px;
+}
+
+element-text {
+  font: "Rubik 12";
+}

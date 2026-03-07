@@ -1,0 +1,33 @@
+configuration {
+  show-icons: true;
+  display-drun: " ";
+}
+
+@import "config.rasi" /*  */ window {
+  width: 450px;
+}
+
+entry {
+  placeholder: "Search applications...";
+}
+
+listview {
+  columns: 1;
+  lines: 8;
+}
+
+element {
+  spacing: 10px;
+  padding: 8px 12px;
+  border-radius: 12px;
+}
+
+element-icon {
+  size: 30px;
+}
+
+element-text {
+  font: "Rubik 12";
+  text-transform: capitalize;
+  font-weight: 800;
+}

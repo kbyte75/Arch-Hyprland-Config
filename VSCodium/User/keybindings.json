@@ -1,0 +1,101 @@
+[
+  {
+    "key": "ctrl+shift+down", // Copy Line Up
+    "command": "editor.action.copyLinesDownAction",
+    "when": "editorTextFocus && !editorReadonly"
+  },
+  {
+    "key": "ctrl+shift+up", // Copy Line Down
+    "command": "editor.action.copyLinesUpAction",
+    "when": "editorTextFocus && !editorReadonly"
+  },
+  {
+    "key": "ctrl+.", // Toggle Terminal
+    "command": "workbench.action.terminal.toggleTerminal",
+    "when": "terminal.active"
+  },
+  {
+    "key": "ctrl+`", // Toggle Terminal
+    "command": "workbench.action.terminal.toggleTerminal",
+    "when": "terminal.active"
+  },
+  {
+    "key": "ctrl+shift+e", // Open Explorer
+    "command": "workbench.view.explorer"
+  },
+  {
+    "key": "ctrl+e", // Open Explorer
+    "command": "workbench.view.explorer"
+  },
+  {
+    "key": "ctrl+shift+x", // Open Extensions tab
+    "command": "workbench.view.extensions"
+  },
+  {
+    "key": "ctrl+shift+g", // Open Source Control
+    "command": "workbench.view.scm",
+    "when": "workbench.scm.active"
+  },
+  {
+    "key": "ctrl+g", // Open Source Control
+    "command": "workbench.view.scm",
+    "when": "workbench.scm.active"
+  },
+  {
+    "key": "ctrl+shift+f", // Open Find in files
+    "command": "workbench.action.findInFiles"
+  },
+  {
+    "key": "alt+s", // Open User settings
+    "command": "workbench.action.openGlobalSettings"
+  },
+  {
+    "key": "alt+k", // Open Keybindings menu
+    "command": "workbench.action.openGlobalKeybindings"
+  },
+  {
+    "key": "ctrl+right", // switch to next active files
+    "command": "workbench.action.nextEditor"
+  },
+  {
+    "key": "ctrl+left", // switch to prev active files
+    "command": "workbench.action.previousEditor"
+  },
+  {
+    "key": "ctrl+w", // close current file
+    "command": "workbench.action.closeActiveEditor"
+  },
+  {
+    "key": "ctrl+o", //Open Folder
+    "command": "workbench.action.files.openFolder"
+  },
+  {
+    "key": "ctrl+o",
+    "command": "-workbench.action.files.openFile",
+    "when": "true"
+  }
+
+  //  ------------------------------------------------------
+  // DEACTIVATED
+  //  ------------------------------------------------------
+  // {
+  //   "key": "ctrl+e",
+  //   "command": "-workbench.action.quickOpen"
+  // },
+  // {
+  //   "key": "ctrl+e",
+  //   "command": "-editor.action.toggleScreenReaderAccessibilityMode",
+  //   "when": "accessibilityHelpIsShown"
+  // },
+
+  // {
+  //   "key": "ctrl+`",
+  //   "command": "-workbench.action.terminal.toggleTerminal",
+  //   "when": "terminal.active"
+  // },
+  // {
+  //   "key": "ctrl+.",
+  //   "command": "-workbench.action.terminal.showQuickFixes",
+  //   "when": "terminalFocus"
+  // }
+]
